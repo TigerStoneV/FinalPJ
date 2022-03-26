@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>추천페이지</title>
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/recommand.css">
+    <!-- pageNation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js" integrity="sha512-1zzZ0ynR2KXnFskJ1C2s+7TIEewmkB2y+5o/+ahF7mwNj9n3PnzARpqalvtjSbUETwx6yuxP5AJXZCpnjEJkQw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- fontawesom -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>    
+    <!-- JQuery -->
+    <!-- <script src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js'></script>
+    <!-- Swiper -->
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+  
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <script src="./js/recommand.js"></script>    
+    <script src="./js/modal.js"></script>    
+</head>
+<body>     
+    <header>
+        <nav class="navbar">
+            <div class="navbar__title">
+                <i class="fas fa-user-secret"></i>
+                 <span class ="navbar__title_title">우만추</span>
+            </div>
+            <ul class="navbar__menu_1">
+                <li><button class ="scroll_top">상단이동</button></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="recommand_first">
+        <div class="form_container">
+            <div class="midPoint">중간지점은 : 
+                <span class="midPoint_value"> 역삼역</span>
+            </div>
+            <div class="big_divider">대분류를 골라주세요</div>
+            <div class="radio_box">                
+                <input type="radio" id="box__food" name="box__big" checked="checked">
+                <label for="box__food">먹거리</label>
+                <input type="radio" id="box__play" name="box__big" >
+                <label for="box__play">놀거리</label>                
+            </div>
+            <div class="small_divider">소분류를 골라주세요(3개까지 입력가능) 개수 :
+                <span id="count_tag"></span>개
+            </div>
+            <div class="tag_box">
+                <div class="tag_box_1">
+                    <div class="tag_content" id="tag_a" onclick="">한식</div>
+                    <div class="tag_content" id="tag_b">중식</div>
+                    <div class="tag_content" id="tag_c">일식</div>
+                    <div class="tag_content" id="tag_d">파스타</div>
+                    <div class="tag_content" id="tag_e">갈비</div>
+                </div>
+                <div class="tag_box_2">
+                    <div class="tag_content" id="tag_f">양식</div>
+                    <div class="tag_content" id="tag_g">오마카세</div>
+                    <div class="tag_content" id="tag_h">카페</div>
+                    <div class="tag_content" id="tag_i">생선</div>
+                    <div class="tag_content" id="tag_j">스테이크</div>
+                </div>
+            </div>            
+            <div class="form_set">
+                <div class="form__confirm">확인</div>
+                <div class="form__clear" >중간지점 재입력</div>
+            </div>    
+        </div>
+    </section>
+    <section id="recommand_second">
+            <div class="map_container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.6612392439415!2d127.02619949693094!3d37.49838112916316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca1598c361b2b%3A0xdbf9af292beff3c!2z6rCV64Ko!5e0!3m2!1sko!2skr!4v1644646151754!5m2!1sko!2skr"
+                width="70%" height="100%"loading="lazy"></iframe>
+                <div class="recommand_list">                                        
+                    <div class="recommand__card" id ="myBtn1" onclick="Action_Slide(1)">                        
+                        <img src="img/1.jpeg" class="card__thumnail">
+                        <div class="card__info">
+                            <span id = "info_title">횡성 한우촌</span>
+                            <div class = "star_category">
+                                <span id = "info_star">4점</span>
+                                <span id = "info_category">한식</span>
+                            </div>                            
+                            <span id = "info_address">서울시 송파구 문정동 150</span>                            
+                        </div>                                               
+                    </div>
+                    <div class="recommand__card" id ="myBtn2" onclick="Action_Slide(2)">                        
+                        <img src="img/1.jpeg" class="card__thumnail">
+                        <div class="card__info">
+                            <span id = "info_title">횡성 한우촌</span>
+                            <div class = "star_category">
+                                <span id = "info_star">4점</span>
+                                <span id = "info_category">한식</span>
+                            </div>                            
+                            <span id = "info_address">서울시 송파구 문정동 150</span>                            
+                        </div>                                               
+                    </div>
+                    <div class="recommand__card" id ="myBtn3" onclick="Action_Slide(3)">                        
+                        <img src="img/1.jpeg" class="card__thumnail">
+                        <div class="card__info">
+                            <span id = "info_title">횡성 한우촌</span>
+                            <div class = "star_category">
+                                <span id = "info_star">4점</span>
+                                <span id = "info_category">한식</span>
+                            </div>                            
+                            <span id = "info_address">서울시 송파구 문정동 150</span>                            
+                        </div>                                               
+                    </div>
+                    <div class="recommand__card" id ="myBtn4" onclick="Action_Slide(4)">                        
+                        <img src="img/1.jpeg" class="card__thumnail">
+                        <div class="card__info">
+                            <span id = "info_title">횡성 한우촌</span>
+                            <div class = "star_category">
+                                <span id = "info_star">4점</span>
+                                <span id = "info_category">한식</span>
+                            </div>                            
+                            <span id = "info_address">서울시 송파구 문정동 150</span>                            
+                        </div>                                               
+                    </div>
+                    <div class="recommand__card" id ="myBtn5" onclick="Action_Slide(5)">                        
+                        <img src="img/1.jpeg" class="card__thumnail">
+                        <div class="card__info">
+                            <span id = "info_title">횡성 한우촌</span>
+                            <div class = "star_category">
+                                <span id = "info_star">4점</span>
+                                <span id = "info_category">한식</span>
+                            </div>                            
+                            <span id = "info_address">서울시 송파구 문정동 150</span>                            
+                        </div>                                               
+                    </div> 
+                                       
+                </div>  
+            </div> 
+    </section>     
+    <section id="recommand_third">
+        <div class="swiper">
+            <div class="swiper-container">                
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="remain_group_1">
+                            <div class="remainder_card" id="myBtn6" onclick="Action_Slide(6)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title">제목</div>
+                                    <div class="remain_info_star">카테고리</div>                        
+                                    <div class="remain_info_category">대표메뉴</div>
+                                    <div class="remain_info_address">운영시간</div>
+                                </div>
+                            </div>    
+                            <div class="remainder_card" id="myBtn7" onclick="Action_Slide(7)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title"></div>
+                                    <div class="remain_info_star"></div>
+                                    <div class="remain_info_category"></div>
+                                    <div class="remain_info_address"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="remain_group_2">
+                            <div class="remainder_card" id="myBtn8" onclick="Action_Slide(8)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title">송주불식당</div>
+                                    <div class="remain_info_star">3.4점</div>                        
+                                    <div class="remain_info_category">일식</div>
+                                    <div class="remain_info_address">서울 금천구 뭐라하지가나다라마</div>
+                                </div>
+                            </div>    
+                            <div class="remainder_card" id="myBtn9" onclick="Action_Slide(9)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title"></div>
+                                    <div class="remain_info_star"></div>
+                                    <div class="remain_info_category"></div>
+                                    <div class="remain_info_address"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="remain_group_3">
+                            <div class="remainder_card" id="myBtn10" onclick="Action_Slide(10)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title">송주불식당</div>
+                                    <div class="remain_info_star">3.4점</div>                        
+                                    <div class="remain_info_category">일식</div>
+                                    <div class="remain_info_address">서울 금천구 뭐라하지가나다라마</div>
+                                </div>
+                            </div>    
+                            <div class="remainder_card" id="myBtn11" onclick="Action_Slide(11)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title"></div>
+                                    <div class="remain_info_star"></div>
+                                    <div class="remain_info_category"></div>
+                                    <div class="remain_info_address"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>	                    
+                    <div class="swiper-slide">
+                        <div class="remain_group_1">
+                            <div class="remainder_card" id="myBtn6" onclick="Action_Slide(6)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title">송주불식당</div>
+                                    <div class="remain_info_star">3.4점</div>                        
+                                    <div class="remain_info_category">일식</div>
+                                    <div class="remain_info_address">서울 금천구 뭐라하지가나다라마</div>
+                                </div>
+                            </div>    
+                            <div class="remainder_card" id="myBtn7" onclick="Action_Slide(7)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title"></div>
+                                    <div class="remain_info_star"></div>
+                                    <div class="remain_info_category"></div>
+                                    <div class="remain_info_address"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="remain_group_2">
+                            <div class="remainder_card" id="myBtn6" onclick="Action_Slide(6)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title">송주불식당</div>
+                                    <div class="remain_info_star">3.4점</div>                        
+                                    <div class="remain_info_category">일식</div>
+                                    <div class="remain_info_address">서울 금천구 뭐라하지가나다라마</div>
+                                </div>
+                            </div>    
+                            <div class="remainder_card" id="myBtn7" onclick="Action_Slide(7)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title"></div>
+                                    <div class="remain_info_star"></div>
+                                    <div class="remain_info_category"></div>
+                                    <div class="remain_info_address"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="remain_group_3">
+                            <div class="remainder_card" id="myBtn6" onclick="Action_Slide(6)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title">송주불식당</div>
+                                    <div class="remain_info_star">3.4점</div>                        
+                                    <div class="remain_info_category">일식</div>
+                                    <div class="remain_info_address">서울 금천구 뭐라하지가나다라마</div>
+                                </div>
+                            </div>    
+                            <div class="remainder_card" id="myBtn7" onclick="Action_Slide(7)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title"></div>
+                                    <div class="remain_info_star"></div>
+                                    <div class="remain_info_category"></div>
+                                    <div class="remain_info_address"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>	
+                    <div class="swiper-slide">
+                        <div class="remain_group_1">
+                            <div class="remainder_card" id="myBtn6" onclick="Action_Slide(6)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title">송주불식당</div>
+                                    <div class="remain_info_star">3.4점</div>                        
+                                    <div class="remain_info_category">일식</div>
+                                    <div class="remain_info_address">서울 금천구 뭐라하지가나다라마</div>
+                                </div>
+                            </div>    
+                            <div class="remainder_card" id="myBtn7" onclick="Action_Slide(7)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title"></div>
+                                    <div class="remain_info_star"></div>
+                                    <div class="remain_info_category"></div>
+                                    <div class="remain_info_address"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="remain_group_2">
+                            <div class="remainder_card" id="myBtn6" onclick="Action_Slide(6)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title">송주불식당</div>
+                                    <div class="remain_info_star">3.4점</div>                        
+                                    <div class="remain_info_category">일식</div>
+                                    <div class="remain_info_address">서울 금천구 뭐라하지가나다라마</div>
+                                </div>
+                            </div>    
+                            <div class="remainder_card" id="myBtn7" onclick="Action_Slide(7)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title"></div>
+                                    <div class="remain_info_star"></div>
+                                    <div class="remain_info_category"></div>
+                                    <div class="remain_info_address"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="remain_group_3">
+                            <div class="remainder_card" id="myBtn6" onclick="Action_Slide(6)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title">송주불식당</div>
+                                    <div class="remain_info_star">3.4점</div>                        
+                                    <div class="remain_info_category">일식</div>
+                                    <div class="remain_info_address">서울 금천구 뭐라하지가나다라마</div>
+                                </div>
+                            </div>    
+                            <div class="remainder_card" id="myBtn7" onclick="Action_Slide(7)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title"></div>
+                                    <div class="remain_info_star"></div>
+                                    <div class="remain_info_category"></div>
+                                    <div class="remain_info_address"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="remain_group_1">
+                            <div class="remainder_card" id="myBtn6" onclick="Action_Slide(6)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title">송주불식당</div>
+                                    <div class="remain_info_star">3.4점</div>                        
+                                    <div class="remain_info_category">일식</div>
+                                    <div class="remain_info_address">서울 금천구 뭐라하지가나다라마</div>
+                                </div>
+                            </div>    
+                            <div class="remainder_card" id="myBtn7" onclick="Action_Slide(7)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title"></div>
+                                    <div class="remain_info_star"></div>
+                                    <div class="remain_info_category"></div>
+                                    <div class="remain_info_address"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="remain_group_2">
+                            <div class="remainder_card" id="myBtn6" onclick="Action_Slide(6)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title">송주불식당</div>
+                                    <div class="remain_info_star">3.4점</div>                        
+                                    <div class="remain_info_category">일식</div>
+                                    <div class="remain_info_address">서울 금천구 뭐라하지가나다라마</div>
+                                </div>
+                            </div>    
+                            <div class="remainder_card" id="myBtn7" onclick="Action_Slide(7)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title"></div>
+                                    <div class="remain_info_star"></div>
+                                    <div class="remain_info_category"></div>
+                                    <div class="remain_info_address"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="remain_group_3">
+                            <div class="remainder_card" id="myBtn6" onclick="Action_Slide(6)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title">송주불식당</div>
+                                    <div class="remain_info_star">3.4점</div>                        
+                                    <div class="remain_info_category">일식</div>
+                                    <div class="remain_info_address">서울 금천구 뭐라하지가나다라마</div>
+                                </div>
+                            </div>    
+                            <div class="remainder_card" id="myBtn7" onclick="Action_Slide(7)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title"></div>
+                                    <div class="remain_info_star"></div>
+                                    <div class="remain_info_category"></div>
+                                    <div class="remain_info_address"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="swiper-slide">
+                        <div class="remain_group_1">
+                            <div class="remainder_card" id="myBtn6" onclick="Action_Slide(6)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title">송주불식당</div>
+                                    <div class="remain_info_star">3.4점</div>                        
+                                    <div class="remain_info_category">일식</div>
+                                    <div class="remain_info_address">서울 금천구 뭐라하지가나다라마</div>
+                                </div>
+                            </div>    
+                            <div class="remainder_card" id="myBtn7" onclick="Action_Slide(7)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title"></div>
+                                    <div class="remain_info_star"></div>
+                                    <div class="remain_info_category"></div>
+                                    <div class="remain_info_address"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="swiper-slide">
+                        <div class="remain_group_2">
+                            <div class="remainder_card" id="myBtn6" onclick="Action_Slide(6)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title">송주불식당</div>
+                                    <div class="remain_info_star">3.4점</div>                        
+                                    <div class="remain_info_category">일식</div>
+                                    <div class="remain_info_address">서울 금천구 뭐라하지가나다라마</div>
+                                </div>
+                            </div>    
+                            <div class="remainder_card" id="myBtn7" onclick="Action_Slide(7)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title"></div>
+                                    <div class="remain_info_star"></div>
+                                    <div class="remain_info_category"></div>
+                                    <div class="remain_info_address"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="swiper-slide">
+                        <div class="remain_group_3">
+                            <div class="remainder_card" id="myBtn6" onclick="Action_Slide(6)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title">송주불식당</div>
+                                    <div class="remain_info_star">3.4점</div>                        
+                                    <div class="remain_info_category">일식</div>
+                                    <div class="remain_info_address">서울 금천구 뭐라하지가나다라마</div>
+                                </div>
+                            </div>    
+                            <div class="remainder_card" id="myBtn7" onclick="Action_Slide(7)">            
+                                <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
+                                <div class="remainder_info">
+                                    <div class="remain_info_title"></div>
+                                    <div class="remain_info_star"></div>
+                                    <div class="remain_info_category"></div>
+                                    <div class="remain_info_address"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>		 -->
+                </div>
+                <!-- 네비게이션 -->
+                <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+                <div class="swiper-button-prev"></div><!-- 이전 버튼 -->            
+                <!-- 페이징 -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+    <!-- modal popup -->
+    <div class="info_modal">
+        <div id="myModal" class="modal">       
+            <div class="modal-content">
+              <span class="close">&times;</span>                                                               
+              <div class="container">
+                 <img src="img/1.jpeg" alt="img not work">              
+                  <div class="infobox">
+                      <div class="info-title">가게이름 :
+                          <span id="shop-title">dddijl</span>
+                      </div>
+                      <div class="info-address">주소 :
+                          <span id="shop-title">abdfglnalbfinalibal</span>
+                      </div>
+                      <div class="info-number">전화번호 :
+                          <span id="shop-title">dd</span>
+                      </div>
+                      <div class="info-star">별점 :
+                          <span id="shop-title">dd</span>
+                      </div>                
+                  </div>                                  
+              </div>
+            </div>                       
+          </div>
+    </div>    
+</body>
+</html>
