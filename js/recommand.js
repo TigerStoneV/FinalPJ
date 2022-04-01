@@ -42,6 +42,7 @@ $(document).ready(()=>{
             if(confirm("👻 입력하신 정보로 추천을 불러오겠습니까?") == true ){
                 $("#recommand_second").css('display','block') 
                 $("#recommand_third").css('display','block')
+                $("#recommand_fourth").css('display','block')
                 $('html, body').animate({
                     scrollTop:1000
                 },1000)            
@@ -82,6 +83,16 @@ $(function() {
             nextEl : '.swiper-button-next', // 다음 버튼 클래스명
             prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
         },
+        breakpoints: {
+            1300: {
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+            },
+            720: {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+            },
+        }
     });
 })
 // Scroll To Top
@@ -92,6 +103,70 @@ $(document).ready(function(){
         },1000)
     })
   })
-  
-  
-  
+  //word_cloud
+//food
+anychart.onDocumentReady(function () {
+    var data = [ 
+        { x : "food", value : 1111}, 
+        { x : "1", value : 1}, 
+        { x : "Python", value : 1}, 
+        { x : "소프트웨어", value : 1}, 
+        { x : "JAVA", value : 1}, 
+        { x : "C++", value : 1 }, 
+        { x : "HTML", value : 61},
+        { x : "4", value : 51}, 
+        { x : "1", value : 14}, 
+        { x : "Python", value : 23}, 
+        { x : "소프트웨어", value : 54}, 
+        { x : "JAVA", value : 52}, 
+        { x : "C++", value : 45 }, 
+        { x : "HTML", value : 61},
+        { x : "1", value : 14}, 
+        { x : "Python", value : 23}, 
+        { x : "소프트웨어", value : 54}, 
+        { x : "JAVA", value : 52}, 
+        { x : "C++", value : 45 }, 
+        { x : "HTML", value : 61},
+        ]; 
+        var chart = anychart.tagCloud(data);
+        
+        chart.selected().fill("#ff865d"); //클릭했을 때 글씨 색 지정 
+        chart.textSpacing(15); //글자간격
+       //  chart.colorRange().enabled(true); //범위
+        chart.angles([90,0]); //각도
+        chart.container("food_container");               
+        chart.draw();
+         }); 
+//play
+    anychart.onDocumentReady(function () {
+    var data = [ 
+        { x : "play", value : 1111}, 
+        { x : "1", value : 1}, 
+        { x : "Python", value : 1}, 
+        { x : "소프트웨어", value : 1}, 
+        { x : "JAVA", value : 1}, 
+        { x : "C++", value : 1 }, 
+        { x : "HTML", value : 61},
+        { x : "4", value : 51}, 
+        { x : "1", value : 14}, 
+        { x : "Python", value : 23}, 
+        { x : "소프트웨어", value : 54}, 
+        { x : "JAVA", value : 52}, 
+        { x : "C++", value : 45 }, 
+        { x : "HTML", value : 61},
+        { x : "1", value : 14}, 
+        { x : "Python", value : 23}, 
+        { x : "소프트웨어", value : 54}, 
+        { x : "JAVA", value : 52}, 
+        { x : "C++", value : 45 }, 
+        { x : "HTML", value : 61},
+        ]; 
+        var chart = anychart.tagCloud(data);
+        
+        chart.selected().fill("#ff865d");  //클릭했을 때 글씨 색 지정 
+        chart.textSpacing(15); //글자간격
+        //  chart.colorRange().enabled(true); //범위
+        chart.angles([90,0]); //각도
+        chart.container("play_container");               
+        chart.draw();
+            }); 

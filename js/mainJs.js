@@ -45,37 +45,42 @@ $(document).ready(function() {
   }));
 });
 
-// delete function debounce
-
-    $(document).ready(function() {      
-        $(".box__close").off('click').on('click',function() {                
-          alert('a')
-          if (count_delete >= 6) {
-            //delete count >= 6 Alert
-            alert("최소 2명 이상 있어야 합니다.")
-          }else {                              
-            const className = $(this).parent().attr('class').split(" ")[1]            
-            boxes.forEach(box => {
-              if (box["class"] == className) {
-                $(this).parent().fadeOut(); //fadeOut 시킴                         
-                box["hidden"] = true; // 상태 hidden으로 변경              
-                count_delete += 1;               
-                count_people -= 1;
-                if (box['location'] !== '') {
-                  box['location'] = '' // location 값 무조건 초기화              
-                  //location 에 값이 있다면
-                  count_value -= 1;                
-                  $("#countValue").html(count_value); 
-                }                           
-              }
-            });                            
-              console.log("사람 입력: "+ count_value)
-              console.log("전체 인풋 박스 값 :" +count_people)      
-              console.log("딜리트 버튼 클릭 값:" +count_delete)           
-            }                              
-          })          
-    })  
+// delete function 
+$(document).ready(function(){
+  $('.box__close').on('click', function(e){
+    var $link = $(e.target);
+    e.preventDefault();
+    if(!$link.data('lockedAt') || +new Date() - $link.data('lockedAt') > 300) {
+      console.log('clicked');
+      if (count_delete >= 6) {
+        //delete count >= 6 Alert
+        alert("최소 2명 이상 있어야 합니다.")
+      }else {                              
+        const className = $(this).parent().attr('class').split(" ")[1]            
+        boxes.forEach(box => {
+          if (box["class"] == className) {
+            $(this).parent().fadeOut(); //fadeOut 시킴                         
+            box["hidden"] = true; // 상태 hidden으로 변경              
+            count_delete += 1;               
+            count_people -= 1;
+            if (box['location'] !== '') {
+              box['location'] = '' // location 값 무조건 초기화              
+              //location 에 값이 있다면
+              count_value -= 1;                
+              $("#countValue").html(count_value); 
+            }                           
+          }
+        });                            
+          console.log("사람 입력: "+ count_value)
+          console.log("전체 인풋 박스 값 :" +count_people)      
+          console.log("딜리트 버튼 클릭 값:" +count_delete)           
+        }   
+    }
+    $link.data('lockedAt', +new Date());
+  });
+})
   //init fuction
+  
   $(document).ready(function(){
     $(".set__init").click(function() {
       if(confirm("👻 모든 지역을 초기화 하시겠어요?") == true) {
@@ -157,6 +162,9 @@ $(document).ready(function() {
           console.log("딜리트 버튼 클릭 값:" +count_delete)         
           return;
         }else{
+          // for(let i =0; i < boxes.length ; i++ ){
+          //   console.log(boxes[i]['location'])            
+          // }
           location.href = 'Recommand.html'      
         }     
       })
@@ -170,3 +178,4 @@ $(document).ready(function() {
       })
     })
     
+
