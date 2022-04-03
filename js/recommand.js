@@ -15,7 +15,7 @@ $(document).ready(()=>{
                 //추가
                 count_tag += 1;   
                 console.log(count_tag)
-            }else{
+            }else{ 
                 count_tag -= 1;   
                 console.log(count_tag)
                 $(this).removeClass('tag_checked');
@@ -30,21 +30,27 @@ $(document).ready(()=>{
             }
         }
         $("#count_tag").html(count_tag);
+        if(count_tag > 0){
+            $('.form__confirm').addClass('confirm_okay');                                               
+        }else {
+            $('.form__confirm').removeClass('confirm_okay');
+        }
     });
 })
 
 //confirm
 $(document).ready(()=>{
+    
     $(".form__confirm").click(()=>{
         if(count_tag == 0){
             alert("태그를 1개이상 선택하셔야합니다.")
         }else{
-            if(confirm("👻 입력하신 정보로 추천을 불러오겠습니까?") == true ){
+            if(confirm("👻 입력하신 정보로 추천을 불러오겠습니까?") == true ){                
                 $("#recommand_second").css('display','block') 
                 $("#recommand_third").css('display','block')
                 $("#recommand_fourth").css('display','block')
                 $('html, body').animate({
-                    scrollTop:1000
+                    scrollTop:900
                 },1000)            
             }else {
                 return ;
@@ -84,29 +90,30 @@ $(function() {
             prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
         },
         breakpoints: {
-            1800:{
+            1900:{
                 slidesPerView: 3,
                 slidesPerGroup: 3
             },
-            1300: {
+            1280: {
                 slidesPerView: 2,
                 slidesPerGroup: 2,
             },
             720: {
                 slidesPerView: 1,
                 slidesPerGroup: 1,
-            },
+            },            
         }
     });
 })
 function btn_reload(){
     if(confirm("👻 재추천을 진행하겠습니까?") === true ){            
-        location.reload();
-        console.log('test')              
+        location.reload();             
   }else {
       return ;
   }
 }
+//setion 유지해야함?
+
 // Scroll To Top
 $(document).ready(function(){
     $('.scroll_top').click(()=>{

@@ -161,11 +161,13 @@ $(document).ready(function(){
           console.log("전체 인풋 박스 값" +count_people)      
           console.log("딜리트 버튼 클릭 값:" +count_delete)         
           return;
-        }else{
-          // for(let i =0; i < boxes.length ; i++ ){
-          //   console.log(boxes[i]['location'])            
-          // }
-          location.href = 'Recommand.html'      
+        }else{       
+          if(confirm("👻 이 주소를 토대로 추천을 진행하시겠습니까 ?") == true) {
+            location.href = 'Recommand.html'      
+          }else {
+            return ;
+          }
+          
         }     
       })
     })

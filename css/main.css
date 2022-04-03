@@ -1,7 +1,6 @@
 html,body{
     margin: 0;
-    height:1000px;
-    /* min-width: 1024px; */
+    height:950px;    
 }
 a {
     text-decoration: none;
@@ -9,9 +8,7 @@ a {
 #section1 {    
     position: relative;
     width: 100%;
-    height: 100%;
-    margin-top:80px;
-    background: url(https://cdn.quv.kr/mtzteu7sy/up/5d9447460f581_1920.jpg) fixed;
+    height: 100%;              
     overflow-x: hidden;            
 }
 
@@ -19,7 +16,7 @@ a {
     position: absolute;
     display:flex;
     justify-content: center;
-    top:15%;
+    bottom:5%;
     left:100px;
     width:500px;
     height:700px;
@@ -139,68 +136,23 @@ a {
     background-color: #FF8C65;    
     
 }
-.background_img .img_1{
-    animation:slide_right_1 1.8s ease-out;
-    font-size: 100px;
+.bg_img{
     position: absolute;
-    top:10%;
-    right:250px;
-    color: #fefefe;
+    top:20%;
+    right:10%
 }
-.background_img .img_2{
-    animation:slide_right_2 2s ease-out;
-    font-size: 100px;
+.right_sub1{
     position: absolute;
-    top:40%;
-    right:450px;
-    color: #fefefe;
+    top:15%;
+    right:5%;
+    color:#FF8C65;
+    font-size: 25px;
 }
-.background_img .img_3{
-    animation:slide_right_3 2.2s ease-out;
-    font-size: 100px;
+.right_sub2{
     position: absolute;
-    top:80%;
-    right:200px;
-    color: #fefefe;
-}
-
-@keyframes slide_left {
-    from{
-        left:-100px;
-        opacity: 0;
-    }
-    to{
-        left:100px;
-        opacity: 1;
-    }
-}
-@keyframes slide_right_1 {
-    from{
-        right:-100px;
-        opacity: 0;
-    }
-    to{
-        right:250px;
-        opacity: 1;
-    }
-}
-@keyframes slide_right_2 {
-    from{
-        right:-100px;
-        opacity: 0;
-    }
-    to{
-        right:450px;
-        opacity: 1;
-    }
-}
-@keyframes slide_right_3 {
-    from{
-        right:-100px;
-        opacity: 0;
-    }
-    to{
-        right:200px;
-        opacity: 1;
-    }
+    top:20%;
+    right:5%;
+    color:#FF8C65;
+    font-size: 30px;
+    font-weight: bold;
 }

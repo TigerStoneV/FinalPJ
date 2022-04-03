@@ -23,7 +23,7 @@
     <!-- anyChart -->
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script> 
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
-    
+        
     <script src="./js/recommand.js"></script>    
     <script src="./js/modal.js"></script>    
 </head>
@@ -41,8 +41,9 @@
     </header>
     <section id="recommand_first">
         <div class="form_container">
-            <div class="midPoint">중간지점은 : 
-                <span class="midPoint_value" id = "midpoint"> 역삼역</span>
+            <div class="midPoint">중간지점은  &nbsp; 
+                <span class="midPoint_value" id= "midpoint">역삼역</span>
+                &nbsp;  입니다
             </div>
             <div class="big_divider">대분류를 골라주세요</div>
             <div class="radio_box">                
@@ -51,30 +52,41 @@
                 <input type="radio" id="box__play" name="box__big" >
                 <label for="box__play">놀거리</label>                
             </div>
-            <div class="small_divider">소분류를 골라주세요(3개까지 입력가능) 개수 :
-                <span id="count_tag"></span>개
+            <div class="small_divider">소분류를 골라주세요 선택갯수 :&nbsp;
+                <span id="count_tag"></span> 개
             </div>
             <div class="tag_box">
                 <div class="tag_box_1">
                     <div class="tag_content" id="tag_a">한식</div>
                     <div class="tag_content" id="tag_b">중식</div>
-                    <div class="tag_content" id="tag_c">일식</div>
+                    <div class="tag_content" id="tag_c">일식</div>                    
+                </div>
+                <div class="tag_box_2">                    
                     <div class="tag_content" id="tag_d">파스타</div>
                     <div class="tag_content" id="tag_e">갈비</div>
+                    <div class="tag_content" id="tag_i">생선</div>                    
                 </div>
-                <div class="tag_box_2">
-                    <div class="tag_content" id="tag_f">양식</div>
+                <div class="tag_box_3">
                     <div class="tag_content" id="tag_g">오마카세</div>
                     <div class="tag_content" id="tag_h">카페</div>
-                    <div class="tag_content" id="tag_i">생선</div>
-                    <div class="tag_content" id="tag_j">스테이크</div>
+                    <div class="tag_content" id="tag_i">생선</div>                    
                 </div>
             </div>            
             <div class="form_set">
+                <div class="form__clear" >뒤로</div>
                 <div class="form__confirm">확인</div>
-                <div class="form__clear" >중간지점 재입력</div>
+                
             </div>    
         </div>
+        <div class="bg_img">
+            <img src="./img/background.png" alt="not found image">
+        </div>
+        <div class="right_sub1">
+            만날 장소를 고를땐 
+        </div>
+        <div class="right_sub2">
+            #우만추
+        </div>  
     </section>
     <section id="recommand_second">
             <div class="map_container">
@@ -487,7 +499,7 @@
         <div class="word_container">
             <div class="word_container2">
                 <div class="key_word">
-                    <span class="cloud_word" id ="midpoint">역삼역</span> 핫 키워드
+                    <span class="cloud_word" id = "midpoint">역삼역 </span> 핫 키워드
                 </div>
                     <div class="h_divider"></div>
                     <div class="box_button">

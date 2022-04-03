@@ -1,11 +1,10 @@
 body {
     margin: 0;
     height: 1000px;
+    
 }
-#recommand_first{
-    margin-top:80px;
+#recommand_first{    
     height: 100%; 
-    /* 맨위에 섹션 기준 navbar height*/
     position: relative;   
     display: block;
 }
@@ -22,28 +21,50 @@ body {
 }
 
 /* First Form */
-.form_container {
-    width:100%; 
-    height:100%;
-    background-color: rgb(208, 158, 255);
+.right_sub1{
     position: absolute;
-       
+    top:15%;
+    right:5%;
+    color:#FF8C65;
+    font-size: 25px;
 }
-.form_container .midPoint{
+.right_sub2{
+    position: absolute;
+    top:20%;
+    right:5%;
+    color:#FF8C65;
+    font-size: 30px;
+    font-weight: bold;
+}
+.bg_img{
+    position: absolute;
+    top:20%;
+    right:10%
+}
+.form_container {
+    position: absolute;    
+    top:10%;
+    width:45%;        
+    height: 70%;
+}
+.form_container .midPoint { 
     display: flex;
-    justify-content: center;
-    margin:50px 70px;
+    align-items: center;
+    justify-content: center;       
+    margin: 50px 15px;
 }
 .form_container .midPoint .midPoint_value{
     font-weight: bold;
 }
-.form_container .big_divider{
+.form_container .big_divider {    
     display: flex;
+    align-items: center;
     justify-content: center;
+    margin: 15px 15px;
 }
 .form_container .radio_box{
     display: flex;
-    justify-content: center;    
+    justify-content: flex-start;    
 }
 /* custom radio button */
 .form_container .radio_box input[type=radio]{
@@ -54,11 +75,12 @@ body {
   }
   .form_container .radio_box input[type=radio] + label{  
     display: flex;    
-    width:350px;
-    height:80px;
+    width:230px;
+    height:65px;
     margin:50px 100px;
-    border: solid 1px #DDD;
-    background-color: #FFF;        
+    border: solid 1px #ff865d;
+    background-color: #FFF;   
+    color: #ff865d;     
     justify-content: center;   
     align-items: center;
     border-radius: 8px;
@@ -72,29 +94,37 @@ body {
     z-index: 1;
   }
  
-.form_container .small_divider {
+.form_container .small_divider {    
     display: flex;
+    align-items: center;
     justify-content: center;
+    margin-bottom: 40px;
 }
 .form_container .tag_box_1,
-.form_container .tag_box_2{          
+.form_container .tag_box_2,
+.form_container .tag_box_3{          
     display: flex;        
-    justify-content:space-between;    
-    margin:70px;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0px;
 }
 .form_container .tag_content {    
     display: flex;
     justify-content: center;
     align-items:center;
-    background-color: rgb(255, 255, 220);
+    background-color: white;
+    color:#ff865d;
+    border: 0.5px solid #ff865d; 
     width:200px;
-    height:90px;
+    height:80px;
     border-radius: 8px;
     cursor: pointer;
     margin:0 20px;
 }
 .form_container .tag_content.tag_checked {   
-    background-color: #ce893a;
+    background-color: #ff865d;
+    border: 0.5px solid #ff865d; 
+    color: white;
     transition: border-color .15s ease-out,  
                 color .25s ease-out, 
                 background-color .15s ease-out,
@@ -102,19 +132,46 @@ body {
  }
 .form_container .form_set {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 40px;
 }
-.form_container .form_set .form__confirm,
+
 .form_container .form_set .form__clear { 
     display: flex;
-    background-color: yellow;
-    width:250px;
-    height:80px;
-    border-radius: 8px;
     justify-content: center;
     align-items: center;
-    margin:50px 150px;
+    background-color: white;
+    border: 0.5px solid #ff865d; 
+    color: #ff865d; 
+    width:150px;
+    height:60px;
+    border-radius: 8px;       
     cursor: pointer;
+    margin-top: 50px;
+}
+.form_container .form_set .form__confirm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.5px solid #DDDDDD; 
+    background-color: #DDDDDD;
+    color:white;
+    width:420px;        
+    height:60px;
+    border-radius: 8px;      
+    cursor: pointer;
+    margin-top: 50px;
+}
+.form_container .form_set .form__confirm.confirm_okay {
+    color: #ff865d; 
+    border: 0.5px solid #ff865d; 
+    background-color: white;                                    
+}
+.form_container .form_set .form__clear:hover,
+.form_container .form_set .form__confirm.confirm_okay:hover {
+    background-color: #ff865d;
+    color:white;     
 }
 /* Second*/
 .map_container {
@@ -128,6 +185,8 @@ body {
     height:100%;    
     overflow: auto;
 }
+/* media query 사용하여 1860px 이상일 경우 overflow:nothing */
+
 .recommand_list .recommand__card {
     display: flex;
     margin: 5px;
@@ -307,9 +366,10 @@ body {
 }
 /* Fourth  */
 .word_container{    
-    background-color: #ff865d;
+    background-color: #FF8C65BF;
     height: 100%;
-    padding: 30px;
+    padding: 10px;
+    border-radius: 10px;
 }
 .word_container2 {
     border-radius: 10px;
@@ -325,7 +385,7 @@ body {
 }
 .word_container .h_divider{    
     margin-top: 25px;
-    border: 3px solid #ff865d;
+    border: 3px solid #FF8C65BF;
 }
 
 .word_container .key_word .cloud_word {
@@ -347,7 +407,6 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 550px;
     
 }
 .word_container .word_cloud #food_container,
@@ -370,8 +429,8 @@ body {
     width:350px;
     height:80px;
     margin:50px 100px;
-    border: solid 2px #ff865d;
-    background-color: #FFF;        
+    color:white;
+    background-color: #FF8C65BF;   
     justify-content: center;   
     align-items: center;
     border-radius: 8px;    
