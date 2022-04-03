@@ -1,7 +1,6 @@
 body {
     margin: 0;
-    height: 1000px;
-    
+    height: 1000px;    
 }
 #recommand_first{    
     height: 100%; 
@@ -27,6 +26,7 @@ body {
     right:5%;
     color:#FF8C65;
     font-size: 25px;
+    animation: slide_right_1 2.2s ease-out;
 }
 .right_sub2{
     position: absolute;
@@ -35,6 +35,7 @@ body {
     color:#FF8C65;
     font-size: 30px;
     font-weight: bold;
+    animation: slide_right_2 2.2s ease-out;
 }
 .bg_img{
     position: absolute;
@@ -443,3 +444,23 @@ body {
     color:white;
 }
 
+@keyframes slide_right_1 {
+    from{
+        right:-100px;
+        opacity: 0;
+    }
+    to{
+        right:5%;
+        opacity: 1;
+    }
+}
+@keyframes slide_right_2 {
+    from{
+        right:-100px;
+        opacity: 0;
+    }
+    to{
+        right:5%;
+        opacity: 1;
+    }
+}

@@ -11,7 +11,6 @@ a {
     height: 100%;              
     overflow-x: hidden;            
 }
-
 .address {
     position: absolute;
     display:flex;
@@ -20,14 +19,14 @@ a {
     left:100px;
     width:500px;
     height:700px;
-    animation: slide_left 1.8s ease-out;
+    animation: slide_left 1.2s ease-out;
     background-color: #fefefe;
     padding: 20px 15px;
     flex-wrap: wrap;
 }
 .address .address_text {    
-    color:#333333;        
-}
+    color:#333333;       
+}   
 .address .address_container {    
     display:block;
     position :absolute;
@@ -147,6 +146,7 @@ a {
     right:5%;
     color:#FF8C65;
     font-size: 25px;
+    animation: slide_right_1 2.2s ease-out;
 }
 .right_sub2{
     position: absolute;
@@ -155,4 +155,36 @@ a {
     color:#FF8C65;
     font-size: 30px;
     font-weight: bold;
+    animation: slide_right_2 2.2s ease-out;
+}
+@keyframes slide_left {
+    from{
+        left:-100px;
+        opacity: 0;
+    }
+    to{
+        left:100px;
+        opacity: 1;
+    }
+}
+@keyframes slide_right_1 {
+    from{
+        right:-100px;
+        opacity: 0;
+    }
+    to{
+        right:5%;
+        opacity: 1;
+    }
+}
+
+@keyframes slide_right_2 {
+    from{
+        right:-100px;
+        opacity: 0;
+    }
+    to{
+        right:5%;
+        opacity: 1;
+    }
 }
