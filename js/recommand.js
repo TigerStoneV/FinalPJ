@@ -1,4 +1,5 @@
 
+ 
 
 let count_tag = 0;
 $(document).ready(()=>{
@@ -35,7 +36,6 @@ $(document).ready(()=>{
 //confirm
 $(document).ready(()=>{
     $(".form__confirm").click(()=>{
-
         if(count_tag == 0){
             alert("태그를 1개이상 선택하셔야합니다.")
         }else{
@@ -84,6 +84,10 @@ $(function() {
             prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
         },
         breakpoints: {
+            1800:{
+                slidesPerView: 3,
+                slidesPerGroup: 3
+            },
             1300: {
                 slidesPerView: 2,
                 slidesPerGroup: 2,
@@ -95,6 +99,14 @@ $(function() {
         }
     });
 })
+function btn_reload(){
+    if(confirm("👻 재추천을 진행하겠습니까?") === true ){            
+        location.reload();
+        console.log('test')              
+  }else {
+      return ;
+  }
+}
 // Scroll To Top
 $(document).ready(function(){
     $('.scroll_top').click(()=>{
@@ -103,21 +115,11 @@ $(document).ready(function(){
         },1000)
     })
   })
-  //word_cloud
+//word_cloud
 //food
 anychart.onDocumentReady(function () {
     var data = [ 
-        { x : "food", value : 1111}, 
-        { x : "1", value : 1}, 
-        { x : "Python", value : 1}, 
-        { x : "소프트웨어", value : 1}, 
-        { x : "JAVA", value : 1}, 
-        { x : "C++", value : 1 }, 
-        { x : "HTML", value : 61},
-        { x : "4", value : 51}, 
-        { x : "1", value : 14}, 
-        { x : "Python", value : 23}, 
-        { x : "소프트웨어", value : 54}, 
+        { x : "food", value : 1111},  
         { x : "JAVA", value : 52}, 
         { x : "C++", value : 45 }, 
         { x : "HTML", value : 61},
@@ -140,14 +142,7 @@ anychart.onDocumentReady(function () {
 //play
     anychart.onDocumentReady(function () {
     var data = [ 
-        { x : "play", value : 1111}, 
-        { x : "1", value : 1}, 
-        { x : "Python", value : 1}, 
-        { x : "소프트웨어", value : 1}, 
-        { x : "JAVA", value : 1}, 
-        { x : "C++", value : 1 }, 
-        { x : "HTML", value : 61},
-        { x : "4", value : 51}, 
+        { x : "play", value : 1111},         
         { x : "1", value : 14}, 
         { x : "Python", value : 23}, 
         { x : "소프트웨어", value : 54}, 
