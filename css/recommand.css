@@ -20,7 +20,7 @@ body {
 }
 
 /* First Form */
-.right_sub1{
+.right_sub1 {
     position: absolute;
     top:15%;
     right:5%;
@@ -28,7 +28,7 @@ body {
     font-size: 25px;
     animation: slide_right_1 2.2s ease-out;
 }
-.right_sub2{
+.right_sub2 {
     position: absolute;
     top:20%;
     right:5%;
@@ -37,10 +37,11 @@ body {
     font-weight: bold;
     animation: slide_right_2 2.2s ease-out;
 }
-.bg_img{
+.bg_img {
     position: absolute;
     top:20%;
-    right:10%
+    right:10%;
+    
 }
 .form_container {
     position: absolute;    
