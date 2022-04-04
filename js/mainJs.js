@@ -92,7 +92,7 @@ $(document).ready(function(){
             boxes[i]["hidden"] = false;            
             boxes[i]['location'] = '';
           }else{
-            //숨겨져있지않으면
+            // 숨겨져있지않으면
             $(`#${boxes[i]['class']}`).val('');
             boxes[i]['location'] = '';
           }
@@ -104,7 +104,6 @@ $(document).ready(function(){
 
         $("#countValue").html(count_value);       
         console.log("초기화시킴")
-
         console.log("주소 들어온 값:" + count_value)      
         console.log("전체 인풋 박스 값" +count_people)      
         console.log("딜리트 버튼 클릭 값:" +count_delete)   
@@ -163,6 +162,9 @@ $(document).ready(function(){
           return;
         }else{       
           if(confirm("👻 이 주소를 토대로 추천을 진행하시겠습니까 ?") == true) {
+            // for(let i = 0; i < boxes.length; i ++){
+            //   console.log(boxes[i]['class']+ ":"  + boxes[i]['location'])
+            // }
             location.href = 'Recommand.html'      
           }else {
             return ;

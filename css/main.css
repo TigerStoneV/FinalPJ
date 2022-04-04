@@ -15,14 +15,14 @@ a {
     position: absolute;
     display:flex;
     justify-content: center;
-    bottom:5%;
-    left:100px;
-    width:500px;
+    bottom: 5%;
+    left: 100px;
+    width: 500px;
     height:700px;
-    animation: slide_left 1.2s ease-out;
-    background-color: #fefefe;
+    animation: slide_left 1.2s ease-out;    
     padding: 20px 15px;
     flex-wrap: wrap;
+    background-color: white;
 }
 .address .address_text {    
     color:#333333;       
@@ -35,7 +35,7 @@ a {
     width:490px;
     height:450px;
     border-radius: 2px;    
-    background-color: #fefefe;    
+    background-color: white; 
     padding:10px;    
     overflow: auto;    
 }
