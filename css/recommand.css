@@ -41,7 +41,6 @@ body {
     position: absolute;
     top:20%;
     right:10%;
-    
 }
 .form_container {
     position: absolute;    
@@ -455,6 +454,16 @@ body {
         opacity: 1;
     }
 }
+@keyframes slide_right_1_2 {
+    from{
+        right:-100px;
+        opacity: 0;
+    }
+    to{
+        right:2%;
+        opacity: 1;
+    }
+}
 @keyframes slide_right_2 {
     from{
         right:-100px;
@@ -463,5 +472,39 @@ body {
     to{
         right:5%;
         opacity: 1;
+    }
+}
+@keyframes slide_right_2_2 {
+    from{
+        right:-100px;
+        opacity: 0;
+    }
+    to{
+        right:2%;
+        opacity: 1;
+    }
+}
+@media (max-width: 1720px) { 
+    .bg_img{
+        position: absolute;
+        top:20%;
+        right:0%
+    }
+    .right_sub1{
+        position: absolute;
+        top:15%;
+        right:2%;
+        color:#FF8C65;
+        font-size: 25px;
+        animation: slide_right_1_2 2.2s ease-out;
+    }
+    .right_sub2{
+        position: absolute;
+        top:20%;
+        right:2%;
+        color:#FF8C65;
+        font-size: 30px;
+        font-weight: bold;
+        animation: slide_right_2_2 2.2s ease-out;
     }
 }
