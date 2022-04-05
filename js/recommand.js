@@ -90,7 +90,7 @@ $(function() {
             prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
         },
         breakpoints: {
-            1900:{
+            1919:{
                 slidesPerView: 3,
                 slidesPerGroup: 3
             },

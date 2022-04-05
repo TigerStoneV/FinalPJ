@@ -51,7 +51,6 @@ $(document).ready(function(){
     var $link = $(e.target);
     e.preventDefault();
     if(!$link.data('lockedAt') || +new Date() - $link.data('lockedAt') > 300) {
-      console.log('clicked');
       if (count_delete >= 6) {
         //delete count >= 6 Alert
         alert("최소 2명 이상 있어야 합니다.")
@@ -161,10 +160,13 @@ $(document).ready(function(){
           console.log("딜리트 버튼 클릭 값:" +count_delete)         
           return;
         }else{       
-          if(confirm("👻 이 주소를 토대로 추천을 진행하시겠습니까 ?") == true) {
+          if(confirm("👻 이 주소를 토대로 추천을 진행하시겠습니까 ?") === true) {
+            // let val_arr = []
             // for(let i = 0; i < boxes.length; i ++){
             //   console.log(boxes[i]['class']+ ":"  + boxes[i]['location'])
-            // }
+            //   val_arr = boxes[i]['location']
+            //   console.log(val_arr[i])
+            // }            
             location.href = 'Recommand.html'      
           }else {
             return ;
