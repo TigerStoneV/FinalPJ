@@ -1,36 +1,85 @@
 
- 
+let count_middle_tag = 0;
+let count_small_tag = 0;
 
-let count_tag = 0;
+
+
 $(document).ready(()=>{
-    $("#count_tag").html(count_tag);
+    $("#count_tag").html(count_small_tag);
 })
-//tag_click
+// m_s Select
+$(document).ready(function(){        
+    $("#middle_select").click(function(){
+        $(this).addClass('tag_checked')
+        $('#small_select').removeClass('tag_checked')
+        $('.middle_box').css('display','block')
+        $('.small_box').css('display','none')
+    })
+    $("#small_select").click(function(){
+        if(count_middle_tag == 0) {
+            alert("중분류를 한개 선택하셔야 합니다.")
+            return ;
+        } else { // middle 태그가 한개 선택되었을떼
+        $(this).addClass('tag_checked')
+        $('#middle_select').removeClass('tag_checked')
+        $('.small_box').css('display','block')
+        $('.middle_box').css('display','none') 
+                    
+        }        
+    }) 
+})
+
+// midlle_tag_click
+$(document).ready(function(){
+    $(".middle_box .tag_content").click(function(){        
+        if( count_middle_tag == 0  &&  $(this).hasClass('tag_checked') == false ) {                              
+                count_middle_tag += 1 ;
+                $("#small_select").attr('class', 'tag_select');
+                $(this).addClass('tag_checked');
+                console.log("on")
+        }        
+        else if( count_middle_tag == 1 && $(this).hasClass('tag_checked') == true){            
+                count_middle_tag -= 1 ;
+                $("#small_select").attr('class', 'tag_not_select');
+                $(this).removeClass('tag_checked');
+                console.log("off")   
+                //소분류 전체 초기화
+                $('.small_box .tag_checked').removeClass('tag_checked');
+                count_small_tag = 0 ;
+                $("#count_tag").html(count_small_tag);                                            
+        }else {
+            console.log("don't click ")
+            return ;
+        }
+    })
+})
+// small_tag_click
     $(document).ready(function(){    
-        $(".tag_content").click(function(){        
-        if(count_tag < 3){
+        $(".small_box .tag_content").click(function(){        
+        if(count_small_tag < 3){
             if($(this).hasClass("tag_checked") === false){
                 // tag_checked 가 안들어가 있으면
                 $(this).addClass('tag_checked');
                 //추가
-                count_tag += 1;   
-                console.log(count_tag)
+                count_small_tag += 1;   
+                console.log(count_small_tag)
             }else{ 
-                count_tag -= 1;   
-                console.log(count_tag)
+                count_small_tag -= 1;                   
                 $(this).removeClass('tag_checked');
+                console.log(count_small_tag)
             }        
-        }else{
+        }
+        else{
             if($(this).hasClass("tag_checked") === false){
                 alert("3개 이상 입력하실 수 없습니다.")                               
             }else{
-                count_tag -= 1;   
-                console.log(count_tag)
+                count_small_tag -= 1;   
+                console.log(count_small_tag)
                 $(this).removeClass('tag_checked');
             }
         }
-        $("#count_tag").html(count_tag);
-        if(count_tag > 0){
+        $("#count_tag").html(count_small_tag);
+        if(count_middle_tag == 1 && count_small_tag > 0 ){
             $('.form__confirm').addClass('confirm_okay');                                               
         }else {
             $('.form__confirm').removeClass('confirm_okay');
@@ -39,10 +88,9 @@ $(document).ready(()=>{
 })
 
 //confirm
-$(document).ready(()=>{
-    
+$(document).ready(()=>{    
     $(".form__confirm").click(()=>{
-        if(count_tag == 0){
+        if(count_small_tag == 0){
             alert("태그를 1개이상 선택하셔야합니다.")
         }else{
             if(confirm("👻 입력하신 정보로 추천을 불러오겠습니까?") == true ){                
