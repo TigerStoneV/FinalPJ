@@ -7,6 +7,7 @@ let count_small_tag = 0;
 $(document).ready(()=>{
     $("#count_tag").html(count_small_tag);
 })
+
 // m_s Select
 $(document).ready(function(){        
     $("#middle_select").click(function(){

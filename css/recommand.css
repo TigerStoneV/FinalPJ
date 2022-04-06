@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    height: 1100px;    
+    height: 1200px;    
 }
 #recommand_first{    
     height: 90%; 
@@ -39,7 +39,7 @@ body {
 }
 .bg_img {
     position: absolute;
-    top:20%;
+    top:25%;
     right:7%;
 }
 .form_container {
@@ -55,14 +55,14 @@ body {
     margin: 50px 15px;
     font-size: 28px;
 }
-.form_container .midPoint .midPoint_value{
+.form_container .midPoint .midPoint_value {
     font-weight: bold;
 }
 .form_container .big_divider {    
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 15px 15px;
+    margin: 15px 15px 30px 15px;
 }
 .form_container .radio_box{
     display: flex;
@@ -99,7 +99,7 @@ body {
 .form_container .select_ms {
     display: flex;
     justify-content: space-around;
-    margin-bottom:40px;
+    margin:30px 0; 
 }
 .select_ms .tag_not_select {
     display: flex;
@@ -143,7 +143,7 @@ body {
     margin-bottom: 10px;
 }
 .middle_box {
-    display: none;
+    display: block;
 }
 .small_box {
     display: none;
