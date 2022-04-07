@@ -45,13 +45,12 @@
                 <span class="midPoint_value" id= "midpoint">역삼역</span>
                 &nbsp; 입니다
             </div>
-            <div class="big_divider">대분류를 골라주세요</div>
-            <div class="radio_box">                
-                <input type="radio" id="box__food" name="box__big" checked="checked">
-                <label for="box__food">먹거리</label>
-                <input type="radio" id="box__play" name="box__big" >
-                <label for="box__play">놀거리</label>               
+            <div class="big_divider">대분류를 선택해주세요</div>            
+            <div class="select_FP">
+                <div class="tag_select tag_checked" id="box__food">먹거리</div>                
+                <div class="tag_select" id="box__play">놀거리</div>
             </div>
+            <div class="ms_divider">중분류 혹은 소분류 선택해주세요</div>
             <div class="select_ms">
                 <div class="tag_select tag_checked" id="middle_select">중분류</div>
                 <!-- <div class="tag_select" id="small_select">소분류</div> -->
@@ -59,40 +58,45 @@
             </div>
             <!-- middle box -->
             <div class="middle_box">
-                <div class="middle_divider">중분류를 골라주세요 </div>   
+                <div class="middle_divider">중분류 </div>   
                 <div class="tag_box">
                     <div class="tag_box_1">
-                        <div class="tag_content" id="m_tag_a">한식</div>
-                        <div class="tag_content" id="m_tag_b">중식</div>
-                        <div class="tag_content" id="m_tag_c">일식</div>                    
+                        <div class="tag_content" id="m_tag_a" >한식</div>
+                        <div class="tag_content" id="m_tag_b" >중식</div>
+                        <div class="tag_content" id="m_tag_c" >일식</div>                    
                     </div>
                     <div class="tag_box_2">                    
-                        <div class="tag_content" id="m_tag_d">파스타</div>
-                        <div class="tag_content" id="m_tag_e">갈비</div>
-                        <div class="tag_content" id="m_tag_f">생선</div>                    
+                        <div class="tag_content" id="m_tag_d" >양식</div>
+                        <div class="tag_content" id="m_tag_e" >카페</div>
+                        <div class="tag_content" id="m_tag_f" >술집</div>                    
+                    </div>
+                    <div class="tag_box_3">                    
+                        <div class="tag_content" id="m_tag_g" ></div>
+                        <div class="tag_content" id="m_tag_h" ></div>
+                        <div class="tag_content" id="m_tag_i" ></div>                    
                     </div>
                 </div>
             </div>         
             <!-- small box -->
             <div class="small_box">
-                <div class="small_divider">소분류를 골라주세요 선택갯수 :&nbsp;
+                <div class="small_divider">소분류 갯수 :&nbsp;
                     <span id="count_tag"></span> 개
                 </div>                
                 <div class="tag_box">
                     <div class="tag_box_1">
-                        <div class="tag_content" id="s_tag_a">한식`</div>
-                        <div class="tag_content" id="s_tag_b">중식</div>
-                        <div class="tag_content" id="s_tag_c">일식</div>                    
+                        <div class="tag_content" id="s_tag_a"></div>
+                        <div class="tag_content" id="s_tag_b"></div>
+                        <div class="tag_content" id="s_tag_c"></div>                    
                     </div>
                     <div class="tag_box_2">                    
-                        <div class="tag_content" id="s_tag_d">파스타</div>
-                        <div class="tag_content" id="s_tag_e">갈비</div>
-                        <div class="tag_content" id="s_tag_i">생선</div>                    
+                        <div class="tag_content" id="s_tag_d"></div>
+                        <div class="tag_content" id="s_tag_e"></div>
+                        <div class="tag_content" id="s_tag_f"></div>                    
                     </div>
                     <div class="tag_box_3">
-                        <div class="tag_content" id="s_tag_g">오마카세</div>
-                        <div class="tag_content" id="s_tag_h">카페</div>
-                        <div class="tag_content" id="s_tag_i">생선</div>                    
+                        <div class="tag_content" id="s_tag_g"></div>
+                        <div class="tag_content" id="s_tag_h"></div>
+                        <div class="tag_content" id="s_tag_i"></div>                    
                     </div>
                 </div>
             </div>                        
