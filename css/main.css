@@ -15,22 +15,23 @@ a {
     position: absolute;
     display:flex;
     justify-content: center;
-    bottom: 5%;
+    bottom: 3%;
     left: 100px;
     width: 500px;
-    height:700px;
+    height:750px;
     animation: slide_left 1.2s ease-out;    
     padding: 20px 15px;
     flex-wrap: wrap;
     background-color: white;
 }
 .address .address_text {    
-    color:#333333;       
+    color:#333333; 
+    font-size: 30px;      
 }   
 .address .address_container {    
     display:block;
     position :absolute;
-    top:55px;
+    top:10%;
     justify-content: center;    
     width:490px;
     height:450px;
@@ -91,11 +92,11 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    bottom: 100px;
+    bottom: 110px;
     color: #fefefe; 
     background-color: #FF8C65BF;
     border-radius: 5px;
-    width: 360px;
+    width: 80%;
     height:70px;
     font-size:30px;
     cursor: pointer;
@@ -113,24 +114,41 @@ a {
     position: absolute;
     bottom:0;
 }
-.address .address_set .set__confirm ,
+.address .address_set .confirm_not_select.set__confirm ,
 .address .address_set .set__init {    
     display: flex;
     justify-content: center;
     align-items: center;
     color: #FF8C65;
-    border: 2px solid #FF8C65BF;
+    border: 0.5px solid #FF8C65BF;
     border-radius: 5px;
     background-color: #fefefe;    
-    bottom: 0;
-    width:120px;
+    bottom: 0;    
     height:60px;
     cursor: pointer;
+}
+.address .address_set .set__confirm {
+    width:60%
+}
+.address_set .confirm_not_select {    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.5px solid #DDDDDD; 
+    background-color: #DDDDDD;
+    color:white;
+    width:60%;        
+    height:60px;
+    border-radius: 5px;          
+    margin:0 20px;      
+}
+.address .address_set .set__init {
+    width:30%
 }
 .address .address_set .set__confirm:hover ,
 .address .address_set .set__init:hover {            
     color: #fefefe;
-    border: 2px solid #fefefe;
+    border: 0.5px solid #fefefe;
     border-radius: 5px;
     background-color: #FF8C65;    
     

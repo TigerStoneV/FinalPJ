@@ -4,7 +4,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>추천페이지</title>
+    <title>추천페이지</title>    
     <link rel="stylesheet" href="./css/navbar.css">
     <link rel="stylesheet" href="./css/recommand.css">
     <!-- pageNation -->
@@ -42,15 +42,16 @@
     <section id="recommand_first">
         <div class="form_container">
             <div class="midPoint">중간지점은&nbsp; 
+                <i class="fa-regular fa-lightbulb"></i>&nbsp;   
                 <span class="midPoint_value" id= "midpoint">역삼역</span>
                 &nbsp; 입니다
             </div>
-            <div class="big_divider">대분류를 선택해주세요</div>            
+            <div class="big_divider">대분류 태그를 선택해주세요</div>            
             <div class="select_FP">
                 <div class="tag_select tag_checked" id="box__food">먹거리</div>                
                 <div class="tag_select" id="box__play">놀거리</div>
             </div>
-            <div class="ms_divider">중분류 혹은 소분류 선택해주세요</div>
+            <div class="ms_divider">중분류 혹은 소분류 태그를 선택해주세요</div>
             <div class="select_ms">
                 <div class="tag_select tag_checked" id="middle_select">중분류</div>
                 <!-- <div class="tag_select" id="small_select">소분류</div> -->
@@ -58,7 +59,7 @@
             </div>
             <!-- middle box -->
             <div class="middle_box">
-                <div class="middle_divider">중분류 </div>   
+                <div class="middle_divider">중분류 태그 </div>   
                 <div class="tag_box">
                     <div class="tag_box_1">
                         <div class="tag_content" id="m_tag_a" >한식</div>
@@ -79,7 +80,7 @@
             </div>         
             <!-- small box -->
             <div class="small_box">
-                <div class="small_divider">소분류 갯수 :&nbsp;
+                <div class="small_divider">소분류 태그 갯수 :&nbsp;
                     <span id="count_tag"></span> 개
                 </div>                
                 <div class="tag_box">
@@ -119,7 +120,7 @@
     <section id="recommand_second">
             <div class="map_container">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.6612392439415!2d127.02619949693094!3d37.49838112916316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca1598c361b2b%3A0xdbf9af292beff3c!2z6rCV64Ko!5e0!3m2!1sko!2skr!4v1644646151754!5m2!1sko!2skr"
-                width="70%" height="100%"loading="lazy"></iframe>
+                width="70%" height="100%" loading="lazy"></iframe>
                 <div class="recommand_list">                                        
                     <div class="recommand__card" id ="myBtn1" onclick="Action_Slide(1)">                        
                         <img src="img/1.jpeg" class="card__thumnail">
@@ -330,7 +331,7 @@
                             <div class="remainder_card" id="myBtn7" onclick="Action_Slide(7)">            
                                 <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
                                 <div class="remainder_info">
-                                    <div class="remain_info_title"></div>
+                                    <div class="remain_info_title">511516231</div>
                                     <div class="remain_info_star"></div>
                                     <div class="remain_info_category"></div>
                                     <div class="remain_info_address"></div>
@@ -367,7 +368,7 @@
                                 <div class="remainder_info">
                                     <div class="remain_info_title">송주불식당</div>
                                     <div class="remain_info_star">3.4점</div>                        
-                                    <div class="remain_info_category">일식</div>
+                                    <div class="remain_info_category">2662일식</div>
                                     <div class="remain_info_address">서울 금천구 뭐라하지가나다라마</div>
                                 </div>
                             </div>    
@@ -388,7 +389,7 @@
                                 <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
                                 <div class="remainder_info">
                                     <div class="remain_info_title">송주불식당</div>
-                                    <div class="remain_info_star">3.4점</div>                        
+                                    <div class="remain_info_star">3.61616164점</div>                        
                                     <div class="remain_info_category">일식</div>
                                     <div class="remain_info_address">서울 금천구 뭐라하지가나다라마</div>
                                 </div>
@@ -431,7 +432,7 @@
                             <div class="remainder_card" id="myBtn6" onclick="Action_Slide(6)">            
                                 <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
                                 <div class="remainder_info">
-                                    <div class="remain_info_title">송주불식당</div>
+                                    <div class="remain_info_title">송주불식ㄱㅁ자ㅣㅇ러ㅓㅏㅁㄴ율당</div>
                                     <div class="remain_info_star">3.4점</div>                        
                                     <div class="remain_info_category">일식</div>
                                     <div class="remain_info_address">서울 금천구 뭐라하지가나다라마</div>
@@ -448,7 +449,7 @@
                             </div>
                         </div>
                     </div>
-                     <div class="swiper-slide">
+                     <!-- <div class="swiper-slide">
                         <div class="remain_group_1">
                             <div class="remainder_card" id="myBtn6" onclick="Action_Slide(6)">            
                                 <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
@@ -462,15 +463,15 @@
                             <div class="remainder_card" id="myBtn7" onclick="Action_Slide(7)">            
                                 <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
                                 <div class="remainder_info">
-                                    <div class="remain_info_title"></div>
+                                    <div class="remain_info_title">1515511551</div>
                                     <div class="remain_info_star"></div>
                                     <div class="remain_info_category"></div>
                                     <div class="remain_info_address"></div>
                                 </div>
                             </div>
                         </div>
-                    </div> 
-                    <div class="swiper-slide">
+                    </div>  -->
+                    <!-- <div class="swiper-slide">
                         <div class="remain_group_2">
                             <div class="remainder_card" id="myBtn6" onclick="Action_Slide(6)">            
                                 <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
@@ -491,8 +492,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                     <div class="swiper-slide">
+                    </div> -->
+                     <!-- <div class="swiper-slide">
                         <div class="remain_group_3">
                             <div class="remainder_card" id="myBtn6" onclick="Action_Slide(6)">            
                                 <img class= "remainder_thumnail"src="./img/1.jpeg" alt="">            
@@ -513,7 +514,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>	
+                    </div>	 -->
                 </div>
                 <!-- 네비게이션 -->
                 <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
@@ -548,7 +549,7 @@
                 </div>
             </div>            
         </div>
-    </section>
+    </section>    
     <!-- modal popup -->
     <div class="info_modal">
         <div id="myModal" class="modal">       
@@ -573,6 +574,6 @@
               </div>
             </div>                       
           </div>
-    </div>    
+    </div> 
 </body>
 </html>

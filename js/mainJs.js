@@ -66,7 +66,10 @@ $(document).ready(function(){
               box['location'] = '' // location 값 무조건 초기화              
               //location 에 값이 있다면
               count_value -= 1;                
-              $("#countValue").html(count_value); 
+              $("#countValue").html(count_value);
+              if(count_value < 2) {
+                $(".confirm_not_select").removeClass('set__confirm');   
+              }
             }                           
           }
         });                            
@@ -138,8 +141,11 @@ $(document).ready(function(){
                         boxes[currentIndex]['location'] = roadAddr;                 
                         document.getElementById(id).value = roadAddr;
                         count_value += 1;             
-                        console.log("사람 입력 :" + count_value)                       
-                        $("#countValue").html(count_value);                        
+                        console.log("사람 입력 :" + count_value)                              
+                        $("#countValue").html(count_value);           
+                        if(count_value >= 2){
+                          $(".confirm_not_select").addClass('set__confirm');                          
+                        }             
                       }
                     }
                   }
@@ -152,36 +158,18 @@ $(document).ready(function(){
     
 // confirm navigation
     $(document).ready(()=>{
-      $(".set__confirm").click(()=>{
+      $(".confirm_not_select").click(() => {
         if(count_value < 2){
           alert('2명이상 주소를 입력 하셔야 합니다');
           console.log("주소 들어온 값:" + count_value)      
           console.log("전체 인풋 박스 값" +count_people)      
-          console.log("딜리트 버튼 클릭 값:" +count_delete)         
-          return;
-        }else{       
-          if(confirm("👻 이 주소를 토대로 추천을 진행하시겠습니까 ?") === true) {
-            // let val_arr = []
-            // for(let i = 0; i < boxes.length; i ++){
-            //   console.log(boxes[i]['class']+ ":"  + boxes[i]['location'])
-            //   val_arr = boxes[i]['location']
-            //   console.log(val_arr[i])
-            // }            
+          console.log("딜리트 버튼 클릭 값:" +count_delete)       
+        }else {
+          if(confirm("👻 이 주소를 토대로 추천을 진행하시겠습니까 ?") === true) {            
             location.href = 'Recommand.html'      
           }else {
             return ;
           }
-          
-        }     
+        }        
       })
     })
-  
-    $(document).ready(function(){
-      $('.scroll_top').click(()=>{
-          $('html,body').animate({
-            scrollTop:0
-          },1000)
-      })
-    })
-    
-

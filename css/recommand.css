@@ -55,7 +55,13 @@ body {
     margin: 50px 15px;
     font-size: 28px;
 }
+.midPoint i {
+    color:#ff865d;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
 .form_container .midPoint .midPoint_value {
+    font-size: 30px;
     font-weight: bold;
 }
 .form_container .big_divider {    
@@ -90,8 +96,7 @@ body {
     color:white;
     width:200px;        
     height:65px;
-    border-radius: 8px;      
-    cursor: pointer;
+    border-radius: 8px;          
     margin:0 20px;
 }
 .form_container .select_FP .tag_select ,
@@ -174,7 +179,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 50px 20px;
+    padding: 50px 30px;
 
 }
 

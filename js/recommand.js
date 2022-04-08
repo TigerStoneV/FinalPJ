@@ -1,7 +1,7 @@
 
 let count_middle_tag = 0;
 let count_small_tag = 0;
-// let select_m_value = #{}
+
 $(document).ready(()=>{
     $("#count_tag").html(count_small_tag);
 })
@@ -332,7 +332,7 @@ $(document).ready(()=>{
                 $("#recommand_third").css('display','block')
                 $("#recommand_fourth").css('display','block')
                 $('html, body').animate({
-                    scrollTop:900
+                    scrollTop:$('#recommand_first').height()
                 },1000)            
             }else {
                 return ;
