@@ -63,6 +63,7 @@ $(document).ready(function(){
 $(document).ready(function(){        
     $("#middle_select").click(function(){
         // 중분류 선택
+        console.log("중분류 선택중")
         $(this).addClass('tag_checked')
         $('#small_select').removeClass('tag_checked')
         $('.middle_box').css('display','block')
@@ -70,8 +71,9 @@ $(document).ready(function(){
     })
     $("#small_select").click(function(){
         //소분류 선택
+        console.log("소분류 선택중")
         if(count_middle_tag == 0) {
-            alert("중분류를 한개 선택하셔야 합니다.")
+            alert("👻 중분류를 한개 선택하셔야 합니다.")
             return ;
         } else { // middle 태그가 한개 선택되었을떼
         $(this).addClass('tag_checked')
@@ -95,7 +97,7 @@ $(document).ready(function(){
                 switch(tag_val){
                     //Food
                     case '한식' :  
-                        console.log("한식 클릭 9 ")
+                        console.log("중분류 :한식 ")
                          $('.small_box #s_tag_a').html('국밥')
                          $('.small_box #s_tag_b').html('죽')
                          $('.small_box #s_tag_c').css('visibility','visible').html('해물,생선요리')
@@ -107,7 +109,7 @@ $(document).ready(function(){
                          $('.small_box #s_tag_i').css('visibility','visible').html('기타')
                         break;
                     case '중식' : 
-                        console.log("중식 클릭 6")
+                        console.log("중분류 :중식")
                          $('.small_box #s_tag_a').html('중식당')
                          $('.small_box #s_tag_b').html('꼬치류')
                          $('.small_box #s_tag_c').css('visibility','visible').html('만두')
@@ -119,7 +121,7 @@ $(document).ready(function(){
                          $('.small_box #s_tag_i').css('visibility', 'hidden')
                         break;
                     case '일식' :
-                         console.log("일식 클릭 8") //5
+                         console.log("중분류 :일식") //5
                          $('.small_box #s_tag_a').html('일식당')
                          $('.small_box #s_tag_b').html('구이,튀김')
                          $('.small_box #s_tag_c').css('visibility','visible').html('쌀요리')
@@ -131,7 +133,7 @@ $(document).ready(function(){
                          $('.small_box #s_tag_i').css('visibility', 'hidden')
                         break;
                     case '양식' : 
-                        console.log("양식 클릭 5")
+                        console.log("중분류 :양식")
                          $('.small_box #s_tag_a').html('브런치')
                          $('.small_box #s_tag_b').html('이탈리아 음식')
                          $('.small_box #s_tag_c').css('visibility','visible').html('멕시코,남미음식')
@@ -143,7 +145,7 @@ $(document).ready(function(){
                          $('.small_box #s_tag_i').css('visibility', 'hidden')
                         break;
                     case '카페' : 
-                        console.log("카페 클릭 6")
+                        console.log("중분류 :카페")
                          $('.small_box #s_tag_a').html('브런치')
                          $('.small_box #s_tag_b').html('디저트 카페')
                          $('.small_box #s_tag_c').css('visibility','visible').html('베이커리 카페')
@@ -155,7 +157,7 @@ $(document).ready(function(){
                          $('.small_box #s_tag_i').css('visibility', 'hidden')
                         break;
                     case '술집' : 
-                        console.log("술집 클릭 8")
+                        console.log("중분류 :술집 ")
                         $('.small_box #s_tag_a').html('맥주 , 호프')
                         $('.small_box #s_tag_b').html('전통 , 민속주점')
                         $('.small_box #s_tag_c').css('visibility','visible').html('포장마차')
@@ -168,7 +170,7 @@ $(document).ready(function(){
                          break;
                     //Play
                     case '노래방' :
-                        console.log("노래방 5")
+                        console.log("중분류 :노래방 5")
                         $('.small_box #s_tag_a').html('노래방') // 스포츠,오락
                         $('.small_box #s_tag_b').html('오락시설')
                         $('.small_box #s_tag_c').css('visibility','visible').html('영상,음향가전')
@@ -180,7 +182,7 @@ $(document).ready(function(){
                         $('.small_box #s_tag_i').css('visibility', 'hidden')                         
                          break;
                     case '영화관' :            
-                        console.log("영화관 4")             
+                        console.log("중분류 :영화관")             
                         $('.small_box #s_tag_a').html('문화,예술')
                         $('.small_box #s_tag_b').html('DVD방')
                         $('.small_box #s_tag_c').css('visibility','visible').html('장소대여')
@@ -192,7 +194,7 @@ $(document).ready(function(){
                         $('.small_box #s_tag_i').css('visibility', 'hidden')
                          break;
                     case '당구장' :                         
-                        console.log("당구장 3")             
+                        console.log("중분류 :당구장 ")             
                         $('.small_box #s_tag_a').html('당구장') // 스포츠 오락
                         $('.small_box #s_tag_b').html('당구용품')
                         $('.small_box #s_tag_c').css('visibility','visible').html('기타')
@@ -204,7 +206,7 @@ $(document).ready(function(){
                         $('.small_box #s_tag_i').css('visibility', 'hidden')
                          break;
                     case 'PC방' :                         
-                        console.log("pc방 3")             
+                        console.log("중분류 :pc방 ")             
                         $('.small_box #s_tag_a').html('PC방') // 스포츠오락
                         $('.small_box #s_tag_b').html('장소대여')
                         $('.small_box #s_tag_c').css('visibility','visible').html('기타')
@@ -216,7 +218,7 @@ $(document).ready(function(){
                         $('.small_box #s_tag_i').css('visibility', 'hidden')
                          break;
                     case '오락실' :
-                        console.log("오락실 3")             
+                        console.log("중분류 :오락실 ")             
                         $('.small_box #s_tag_a').html('오락실')// 스포츠오락
                         $('.small_box #s_tag_b').html('노래방')
                         $('.small_box #s_tag_c').css('visibility','visible').html('기타')
@@ -228,7 +230,7 @@ $(document).ready(function(){
                         $('.small_box #s_tag_i').css('visibility', 'hidden')                         
                          break;
                     case '놀이공원' :
-                        console.log("놀이공원 3")             
+                        console.log("중분류 :놀이공원 ")             
                         $('.small_box #s_tag_a').html('테마파크')
                         $('.small_box #s_tag_b').html('레저,테마')
                         $('.small_box #s_tag_c').css('visibility','visible').html('기타')
@@ -240,7 +242,7 @@ $(document).ready(function(){
                         $('.small_box #s_tag_i').css('visibility', 'hidden')                             
                          break;
                     case '찜질방' :                         
-                        console.log("찜질방 3")             
+                        console.log("중분류 :찜질방 ")             
                         $('.small_box #s_tag_a').html('목욕탕,사우나')
                         $('.small_box #s_tag_b').html('레저,테마')
                         $('.small_box #s_tag_c').css('visibility','visible').html('기타')
@@ -252,7 +254,7 @@ $(document).ready(function(){
                         $('.small_box #s_tag_i').css('visibility', 'hidden')           
                          break;
                     case '카페/놀거리' :                         
-                        console.log("카페 4")             
+                        console.log("중분류 :카페 ")             
                         $('.small_box #s_tag_a').html('보드카페')
                         $('.small_box #s_tag_b').html('방탈출')
                         $('.small_box #s_tag_c').css('visibility','visible').html('만화카페')
@@ -264,7 +266,7 @@ $(document).ready(function(){
                         $('.small_box #s_tag_i').css('visibility', 'hidden')           
                          break;
                     case '스포츠/오락' :                      
-                       console.log("스포츠, 오락 2")             
+                       console.log("중분류 :스포츠, 오락 ")             
                         $('.small_box #s_tag_a').html('볼링')
                         $('.small_box #s_tag_b').html('스크린 야구')
                         $('.small_box #s_tag_c').css('visibility','hidden')
@@ -309,7 +311,7 @@ $(document).ready(function(){
         }
         else{
             if($(this).hasClass("tag_checked") === false){
-                alert("3개 이상 입력하실 수 없습니다.")                               
+                alert("👻 3개 이상 입력하실 수 없습니다.")                               
             }else{
                 count_small_tag -= 1;   
                 console.log("소분류 해제:",$(this).text() , count_small_tag)
@@ -329,11 +331,11 @@ $(document).ready(function(){
 $(document).ready(()=>{    
     $(".form__confirm").click(()=>{
         if(count_small_tag == 0){
-            alert("태그를 1개이상 선택하셔야합니다.")
+            alert("👻 소분류 태그를 1개이상 선택하셔야 합니다.")
         }else{
             if(confirm("👻 입력하신 정보로 추천을 불러오겠습니까?") == true ){ 
-                console.log($('.middle_box .tag_content.tag_checked').text())
-                console.log($('.small_box .tag_content.tag_checked').text())
+                console.log("중분류:",$('.middle_box .tag_content.tag_checked').text())
+                console.log("소분류: ",$('.small_box .tag_content.tag_checked').text())
                 $("#recommand_second").css('display','block') 
                 $("#recommand_third").css('display','block')
                 $("#recommand_fourth").css('display','block')
@@ -396,7 +398,7 @@ $(function() {
 $(document).ready(function(){
     $('.food_button').click(function(){
         if(confirm("👻"+$(".midPoint_value").text()+ "의 먹거리로 재추천을 진행하겠습니까?") === true){
-            console.log("food")
+            console.log("food로 재추천 진행")
             $("#recommand_second").css('display','none') 
             $("#recommand_third").css('display','none')
             $("#recommand_fourth").css('display','none')
@@ -411,7 +413,7 @@ $(document).ready(function(){
     })
     $('.play_button').click(function(){
         if(confirm("👻"+$(".midPoint_value").text()+ "의 놀거리로 재추천을 진행하겠습니까?") === true){
-            console.log("play")
+            console.log("play로 재추천 진행")
             $("#recommand_second").css('display','none') 
             $("#recommand_third").css('display','none')
             $("#recommand_fourth").css('display','none')

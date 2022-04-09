@@ -53,7 +53,7 @@ $(document).ready(function(){
     if(!$link.data('lockedAt') || +new Date() - $link.data('lockedAt') > 300) {
       if (count_delete >= 6) {
         //delete count >= 6 Alert
-        alert("최소 2명 이상 있어야 합니다.")
+        alert("👻 인원은 최소 2명 이상 있어야 합니다.")
       }else {                              
         const className = $(this).parent().attr('class').split(" ")[1]            
         boxes.forEach(box => {
@@ -150,7 +150,7 @@ $(document).ready(function(){
                     }
                   }
                 } else {
-                  alert("서울 시내만 가능합니다");
+                  alert("👻 서울 시내만 가능합니다");
                 }                            
             }
         }).open();
@@ -160,7 +160,7 @@ $(document).ready(function(){
     $(document).ready(()=>{
       $(".confirm_not_select").click(() => {
         if(count_value < 2){
-          alert('2명이상 주소를 입력 하셔야 합니다');
+          alert('👻 2명이상 주소를 입력 하셔야 합니다');
           console.log("주소 들어온 값:" + count_value)      
           console.log("전체 인풋 박스 값" +count_people)      
           console.log("딜리트 버튼 클릭 값:" +count_delete)       
