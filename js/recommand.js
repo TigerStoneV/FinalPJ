@@ -3,11 +3,14 @@ let count_middle_tag = 0;
 let count_small_tag = 0;
 
 $(document).ready(()=>{
-    $("#count_tag").html(count_small_tag);
+    $("#count_tag").html(count_small_tag); // 소분류 태그 개수    
+    $(".cloud_word").text($('.midPoint_value').text())
 })
 //big Radio Select
 $(document).ready(function(){
     $("#box__food").click(function(){
+        // 대분류 먹거리 선택
+        console.log("대분류 먹거리")
         $('.middle_box .tag_box_3').css('visibility','hidden')
         $('.middle_box #m_tag_a').html('한식')        
         $('.middle_box #m_tag_b').html('중식')        
@@ -27,8 +30,11 @@ $(document).ready(function(){
         // 선택 checked 추가        
         $(this).addClass('tag_checked');
         $('#box__play').removeClass('tag_checked');
+        
     })
     $('#box__play').click(function(){
+        // 대분류 놀거리 선택
+        console.log("대분류 놀거리")
         $('.middle_box .tag_box_3').css('visibility','visible')        
         $('.middle_box #m_tag_a').html('노래방')        
         $('.middle_box #m_tag_b').html('영화관')        
@@ -56,12 +62,14 @@ $(document).ready(function(){
 // m_s Select
 $(document).ready(function(){        
     $("#middle_select").click(function(){
+        // 중분류 선택
         $(this).addClass('tag_checked')
         $('#small_select').removeClass('tag_checked')
         $('.middle_box').css('display','block')
         $('.small_box').css('display','none')        
     })
     $("#small_select").click(function(){
+        //소분류 선택
         if(count_middle_tag == 0) {
             alert("중분류를 한개 선택하셔야 합니다.")
             return ;
@@ -83,7 +91,7 @@ $(document).ready(function(){
                 $("#small_select").attr('class', 'tag_select');
                 $(this).addClass('tag_checked');
                 let tag_val = $(this).text();
-                console.log(tag_val)
+                
                 switch(tag_val){
                     //Food
                     case '한식' :  
@@ -267,14 +275,12 @@ $(document).ready(function(){
                         $('.small_box #s_tag_h').css('visibility', 'hidden')
                         $('.small_box #s_tag_i').css('visibility', 'hidden')                          
                          break;
-                }
-                console.log("on")
+                }                
         }        
         else if( count_middle_tag == 1 && $(this).hasClass('tag_checked') == true){            
                 count_middle_tag -= 1 ;
                 $("#small_select").attr('class', 'tag_not_select');
-                $(this).removeClass('tag_checked');
-                console.log("off")   
+                $(this).removeClass('tag_checked');                  
                 //소분류 전체 초기화
                 $('.small_box .tag_checked').removeClass('tag_checked');
                 count_small_tag = 0 ;
@@ -294,11 +300,11 @@ $(document).ready(function(){
                 $(this).addClass('tag_checked');
                 //추가
                 count_small_tag += 1;   
-                console.log($(this).text())
+                console.log("소분류 :",$(this).text() , count_small_tag)
             }else{ 
                 count_small_tag -= 1;                   
                 $(this).removeClass('tag_checked');
-                console.log(count_small_tag)
+                console.log("소분류 해제:",$(this).text() , count_small_tag)
             }        
         }
         else{
@@ -306,7 +312,7 @@ $(document).ready(function(){
                 alert("3개 이상 입력하실 수 없습니다.")                               
             }else{
                 count_small_tag -= 1;   
-                console.log(count_small_tag)
+                console.log("소분류 해제:",$(this).text() , count_small_tag)
                 $(this).removeClass('tag_checked');
             }
         }
@@ -387,13 +393,16 @@ $(function() {
         }
     });
 })
-$(document).ready(function(){    
+$(document).ready(function(){
     $('.food_button').click(function(){
-        if(confirm("👻 먹거리로 재추천을 진행하겠습니까?") === true){
+        if(confirm("👻"+$(".midPoint_value").text()+ "의 먹거리로 재추천을 진행하겠습니까?") === true){
             console.log("food")
             $("#recommand_second").css('display','none') 
             $("#recommand_third").css('display','none')
             $("#recommand_fourth").css('display','none')
+            $('html,body').animate({
+                scrollTop:0
+              },500)
             $('#box__food').click();
         }
         else{
@@ -401,11 +410,14 @@ $(document).ready(function(){
         }        
     })
     $('.play_button').click(function(){
-        if(confirm("👻 놀거리로 재추천을 진행하겠습니까?") === true){
+        if(confirm("👻"+$(".midPoint_value").text()+ "의 놀거리로 재추천을 진행하겠습니까?") === true){
             console.log("play")
             $("#recommand_second").css('display','none') 
             $("#recommand_third").css('display','none')
             $("#recommand_fourth").css('display','none')
+            $('html,body').animate({
+                scrollTop:0
+              },500)
             $('#box__play').click();
         }
         else{
@@ -413,24 +425,6 @@ $(document).ready(function(){
         }           
     })
 })
-// function btn_reload(){
-//     if(confirm("👻 재추천을 진행하겠습니까?") === true ){            
-//         // location.reload();        
-//         $("#recommand_second").css('display','none') 
-//         $("#recommand_third").css('display','none')
-//         $("#recommand_fourth").css('display','none')
-//         if($('#word_btn').hasClass('food_button') === true){
-//             console.log('food');
-//             $('#box__food').click();
-//         }else if($('#word_btn').hasClass('play_button') === true) {
-//             console.log('play ')
-//             $('#box__play').click();
-//         }
-//   }else {
-//       return ;
-//   }
-// }
-//setion 유지해야함?
 
 // Scroll To Top
 $(document).ready(function(){
