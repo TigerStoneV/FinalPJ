@@ -161,7 +161,7 @@ $(document).ready(function(){
                     //Play
                     case '노래방' :
                         console.log("노래방 5")
-                        $('.small_box #s_tag_a').html('스포츠,오락')
+                        $('.small_box #s_tag_a').html('노래방') // 스포츠,오락
                         $('.small_box #s_tag_b').html('오락시설')
                         $('.small_box #s_tag_c').css('visibility','visible').html('영상,음향가전')
                         $('.small_box #s_tag_d').css('visibility','visible').html('단란주점')
@@ -185,7 +185,7 @@ $(document).ready(function(){
                          break;
                     case '당구장' :                         
                         console.log("당구장 3")             
-                        $('.small_box #s_tag_a').html('스포츠,오락')
+                        $('.small_box #s_tag_a').html('당구장') // 스포츠 오락
                         $('.small_box #s_tag_b').html('당구용품')
                         $('.small_box #s_tag_c').css('visibility','visible').html('기타')
                         $('.small_box #s_tag_d').css('visibility', 'hidden')
@@ -197,7 +197,7 @@ $(document).ready(function(){
                          break;
                     case 'PC방' :                         
                         console.log("pc방 3")             
-                        $('.small_box #s_tag_a').html('오락시설')
+                        $('.small_box #s_tag_a').html('PC방') // 스포츠오락
                         $('.small_box #s_tag_b').html('장소대여')
                         $('.small_box #s_tag_c').css('visibility','visible').html('기타')
                         $('.small_box #s_tag_d').css('visibility', 'hidden')
@@ -209,7 +209,7 @@ $(document).ready(function(){
                          break;
                     case '오락실' :
                         console.log("오락실 3")             
-                        $('.small_box #s_tag_a').html('스포츠,오락')
+                        $('.small_box #s_tag_a').html('오락실')// 스포츠오락
                         $('.small_box #s_tag_b').html('노래방')
                         $('.small_box #s_tag_c').css('visibility','visible').html('기타')
                         $('.small_box #s_tag_d').css('visibility', 'hidden')
@@ -387,13 +387,49 @@ $(function() {
         }
     });
 })
-function btn_reload(){
-    if(confirm("👻 재추천을 진행하겠습니까?") === true ){            
-        location.reload();             
-  }else {
-      return ;
-  }
-}
+$(document).ready(function(){    
+    $('.food_button').click(function(){
+        if(confirm("👻 먹거리로 재추천을 진행하겠습니까?") === true){
+            console.log("food")
+            $("#recommand_second").css('display','none') 
+            $("#recommand_third").css('display','none')
+            $("#recommand_fourth").css('display','none')
+            $('#box__food').click();
+        }
+        else{
+            return ; 
+        }        
+    })
+    $('.play_button').click(function(){
+        if(confirm("👻 놀거리로 재추천을 진행하겠습니까?") === true){
+            console.log("play")
+            $("#recommand_second").css('display','none') 
+            $("#recommand_third").css('display','none')
+            $("#recommand_fourth").css('display','none')
+            $('#box__play').click();
+        }
+        else{
+            return ; 
+        }           
+    })
+})
+// function btn_reload(){
+//     if(confirm("👻 재추천을 진행하겠습니까?") === true ){            
+//         // location.reload();        
+//         $("#recommand_second").css('display','none') 
+//         $("#recommand_third").css('display','none')
+//         $("#recommand_fourth").css('display','none')
+//         if($('#word_btn').hasClass('food_button') === true){
+//             console.log('food');
+//             $('#box__food').click();
+//         }else if($('#word_btn').hasClass('play_button') === true) {
+//             console.log('play ')
+//             $('#box__play').click();
+//         }
+//   }else {
+//       return ;
+//   }
+// }
 //setion 유지해야함?
 
 // Scroll To Top
@@ -434,6 +470,12 @@ anychart.onDocumentReady(function () {
         { x : "play", value : 1111},         
         { x : "1", value : 14}, 
         { x : "Python", value : 23}, 
+        { x : "소프트웨어", value : 54}, 
+        { x : "JAVA", value : 52}, 
+        { x : "C++", value : 45 }, 
+        { x : "HTML", value : 61},
+        { x : "1", value : 14}, 
+        { x : "Python", value : 23},
         { x : "소프트웨어", value : 54}, 
         { x : "JAVA", value : 52}, 
         { x : "C++", value : 45 }, 
