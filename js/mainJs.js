@@ -82,7 +82,6 @@ $(document).ready(function(){
   });
 })
   //init fuction
-  
   $(document).ready(function(){
     $(".set__init").click(function() {
       if(confirm("👻 모든 지역을 초기화 하시겠어요?") == true) {
