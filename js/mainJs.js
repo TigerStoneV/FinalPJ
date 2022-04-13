@@ -51,7 +51,6 @@ $(document).ready(function(){
     var $link = $(e.target);
     e.preventDefault();
     if(!$link.data('lockedAt') || +new Date() - $link.data('lockedAt') > 300) {
-      console.log('clicked');
       if (count_delete >= 6) {
         //delete count >= 6 Alert
         alert("최소 2명 이상 있어야 합니다.")
@@ -92,7 +91,7 @@ $(document).ready(function(){
             boxes[i]["hidden"] = false;            
             boxes[i]['location'] = '';
           }else{
-            //숨겨져있지않으면
+            // 숨겨져있지않으면
             $(`#${boxes[i]['class']}`).val('');
             boxes[i]['location'] = '';
           }
@@ -104,7 +103,6 @@ $(document).ready(function(){
 
         $("#countValue").html(count_value);       
         console.log("초기화시킴")
-
         console.log("주소 들어온 값:" + count_value)      
         console.log("전체 인풋 박스 값" +count_people)      
         console.log("딜리트 버튼 클릭 값:" +count_delete)   
@@ -162,15 +160,30 @@ $(document).ready(function(){
           console.log("딜리트 버튼 클릭 값:" +count_delete)         
           return;
         }else{       
-          if(confirm("👻 이 주소를 토대로 추천을 진행하시겠습니까 ?") == true) {
+          if(confirm("👻 이 주소를 토대로 추천을 진행하시겠습니까 ?") === true) {
 			let val_arr = [];
             for(let i = 0; i < boxes.length; i++){
 				val_arr.push(boxes[i]['location']);
 			}
+			
+			goController({
+				url: "get-meetpoint",
+				target: "_self",
+				vals: [
+					["one", val_arr[0]],
+					["two", val_arr[1]],
+					["three", val_arr[2]],
+					["four", val_arr[3]],
+					["five", val_arr[4]],
+					["six", val_arr[5]],
+					["seven", val_arr[6]],
+					["eight", val_arr[7]],
+				]
+			});
 
-            location.href = 'get-meetpoint?one='+val_arr[0]+'&two='+val_arr[1]+'&three='+val_arr[2]+
+/*            location.href = 'get-meetpoint?one='+val_arr[0]+'&two='+val_arr[1]+'&three='+val_arr[2]+
             				'&four='+val_arr[3]+'&five='+val_arr[4]+'&six='+val_arr[5]+
-            				'&seven='+val_arr[6]+'&eight='+val_arr[7];
+            				'&seven='+val_arr[6]+'&eight='+val_arr[7];  */   
           }else {
             return ;
           }
@@ -187,4 +200,20 @@ $(document).ready(function(){
       })
     })
     
-
+// controller 이동 함수
+function goController(Data){
+	var doc = "";
+	
+	for(let i = 0; i < Data.vals.length; i++){
+		doc += "<input type='hidden' name='" + Data.vals[i][0] +"' value='" + Data.vals[i][1] +"'>"
+	}
+	
+	let goForm = $("<form>", {
+		method: "post",
+		action: Data.url,
+		target: Data.target,
+		html: doc
+	}).appendTo("body");
+	
+	goForm.submit();
+}
