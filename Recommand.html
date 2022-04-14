@@ -36,9 +36,12 @@
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
      <!-- TypeIt -->
-     <script src="https://unpkg.com/typeit@8.4.0/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/typeit@8.4.0/dist/index.umd.js"></script>
+    <!-- ScrollOut -->
+    <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
     <script src="./js/recommand.js"></script>
     <script src="./js/modal.js"></script>
+
   </head>
   <body>
     <header>
@@ -126,7 +129,7 @@
       <div class="right_sub1">만날 장소를 고를땐</div>
       <div class="right_sub2">#우만추</div>
     </section>
-    <section id="recommand_second">
+    <section data-scroll id="recommand_second">
       <div class="map_container">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.6612392439415!2d127.02619949693094!3d37.49838112916316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca1598c361b2b%3A0xdbf9af292beff3c!2z6rCV64Ko!5e0!3m2!1sko!2skr!4v1644646151754!5m2!1sko!2skr"
@@ -193,7 +196,7 @@
         </div>
       </div>
     </section>
-    <section id="recommand_third">
+    <section data-scroll id="recommand_third">
       <div class="swiper">
         <div class="swiper-container">
           <div class="swiper-wrapper">
@@ -661,7 +664,7 @@
         </div>
       </div>
     </section>
-    <section id="recommand_fourth">
+    <section data-scroll id="recommand_fourth">
       <div class="word_container">
         <div class="word_container2">
           <div class="key_word">
@@ -723,10 +726,14 @@
         </div>
       </div>
     </div>
-    <script>    
+    <script>
+    ScrollOut({
+      once:true,
+    });
     new TypeIt(".right_sub2", {    
     startDelay: 2000,
     speed: 150,
+    waitUntilVisible: true,
     })    
     .go();
     </script>

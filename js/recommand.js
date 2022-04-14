@@ -1,5 +1,6 @@
 let count_middle_tag = 0;
 let count_small_tag = 0;
+
 $(document).ready(() => {
   $("#count_tag").html(count_small_tag); // 소분류 태그 개수
 });
