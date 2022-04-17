@@ -385,7 +385,7 @@ $(document).ready(() => {
         $("#recommand_fourth").css("display", "block");
         $("html, body").animate(
           {
-            scrollTop: $("#recommand_first").height(),
+            scrollTop: 1000,
           },
           1000
         );

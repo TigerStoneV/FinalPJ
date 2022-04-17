@@ -9,10 +9,11 @@ body {
 }
 #recommand_second {
   display: none;
+  background-color: #fafafa;
 }
 #recommand_third {
   display: none;
-  height: 100%;
+  height: 90%;
 }
 #recommand_fourth {
   display: none;
@@ -226,7 +227,24 @@ body {
   overflow: auto;
   border: 0.5px solid gray;
 }
-/* media query 사용하여 1860px 이상일 경우 overflow:nothing */
+.second_title,
+.third_title {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 50px 20px;
+}
+.second_title .second_title_big,
+.third_title .third_title_big {
+  font-size: 30px;
+  color: #ff8c65;
+  margin-right: 10px;
+}
+.second_title_small,
+.third_title_small {
+  color: #999;
+  font-size: 20px;
+}
 
 .recommand_list .recommand__card {
   display: flex;
@@ -272,7 +290,7 @@ body {
   cursor: pointer;
 }
 .remainder_card .remainder_thumnail {
-  width: 250px;
+  min-width: 250px;
   height: 100%;
   border-radius: 5px;
   margin-right: 10px;
@@ -312,9 +330,10 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
 /* swiper */
+
 .swiper-container {
-  margin-top: 150px;
   padding: 50px;
   height: 800px;
   border: 5px solid #ff8c65bf;

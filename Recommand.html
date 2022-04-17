@@ -131,6 +131,10 @@
       <div class="right_sub2">#우만추</div>
     </section>
     <section data-scroll id="recommand_second">
+      <div class="second_title"> 
+        <span class="second_title_big">베스트 추천(5)</span>
+        <span class="second_title_small">우만추가 추천하는 인기 장소입니다. </span> 
+      </div>
       <div class="map_container">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.6612392439415!2d127.02619949693094!3d37.49838112916316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca1598c361b2b%3A0xdbf9af292beff3c!2z6rCV64Ko!5e0!3m2!1sko!2skr!4v1644646151754!5m2!1sko!2skr"
@@ -198,6 +202,10 @@
       </div>
     </section>
     <section data-scroll id="recommand_third">
+      <div class="third_title"> 
+        <span class="third_title_big">플러스 추천 </span>
+        <span class="third_title_small">탑 5를 제외한 사용자 맞춤 리스트입니다.</span> 
+      </div>
       <div class="swiper">
         <div class="swiper-container">
           <div class="swiper-wrapper">
@@ -733,10 +741,22 @@
     });
     new TypeIt(".right_sub2", {    
     startDelay: 2000,
-    speed: 50,
+    speed: 60,
     waitUntilVisible: true,
     })    
     .go();
+    new TypeIt(".second_title", {
+    startDelay: 1000,
+    speed: 60,
+    waitUntilVisible: true,
+    })    
+    .go();    
+    new TypeIt(".third_title", {
+    startDelay: 1000,
+    speed: 60,
+    waitUntilVisible: true,
+    })    
+    .go();    
     </script>
   </body>
 </html>
