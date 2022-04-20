@@ -40,7 +40,7 @@ $(document).ready(function () {
           console.log("딜리트 버튼 클릭 값:" + count_delete);
           break;
         } else if (i == boxes.length - 1 && boxes[i]["hidden"] === false) {
-          alert("8명까지 가능합니다");
+          alert("👻 8명까지 가능합니다");
         }
       }
     })

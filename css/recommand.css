@@ -57,14 +57,15 @@ body {
   font-size: 28px;
 }
 
-.midPoint i {
-  color: #ff865d;
-  font-size: 30px;
+.midPoint .midPoint_img {
+  width: 40px;
+  height: 40px;
   margin-bottom: 5px;
 }
 .form_container .midPoint .midPoint_value {
   font-size: 30px;
   font-weight: bold;
+  color: #ff774a;
 }
 .form_container .big_divider {
   display: flex;
@@ -442,14 +443,30 @@ body {
   border-radius: 7px;
   cursor: pointer;
 }
-.b_btn {
+.m_btn:hover {
+  background-color: #ff865d;
+  color: white;
+}
+.btn_2 {
   left: 85px;
 }
-.c_btn {
+.btn_3 {
   left: 145px;
 }
-.d_btn {
+.btn_4 {
   left: 205px;
+}
+.btn_5 {
+  left: 265px;
+}
+.btn_6 {
+  left: 325px;
+}
+.btn_7 {
+  left: 385px;
+}
+.btn_8 {
+  left: 445px;
 }
 /* Fourth  */
 .word_container {
