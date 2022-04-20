@@ -446,13 +446,7 @@ $(function () {
 });
 $(document).ready(function () {
   $(".food_button").click(function () {
-    if (
-      confirm(
-        "👻" +
-          $(".midPoint_value").text() +
-          "의 먹거리로 재추천을 진행하겠습니까?"
-      ) === true
-    ) {
+    if (confirm("👻 먹거리로 재추천을 진행하겠습니까?") === true) {
       console.log("food로 재추천 진행");
       $("#recommand_second").css("display", "none");
       $("#recommand_third").css("display", "none");
@@ -469,13 +463,7 @@ $(document).ready(function () {
     }
   });
   $(".play_button").click(function () {
-    if (
-      confirm(
-        "👻" +
-          $(".midPoint_value").text() +
-          "의 놀거리로 재추천을 진행하겠습니까?"
-      ) === true
-    ) {
+    if (confirm("👻 놀거리로 재추천을 진행하겠습니까?") === true) {
       console.log("play로 재추천 진행");
       $("#recommand_second").css("display", "none");
       $("#recommand_third").css("display", "none");
