@@ -277,6 +277,14 @@ body {
 .star_category {
   display: inline;
 }
+.star_category .info_bizhour,
+.star_category .info_category,
+#info_address {
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 /* Third Remain */
 
@@ -307,7 +315,7 @@ body {
   font-size: 25px;
 }
 .remainder_card .remainder_info .remain_info_title {
-  width: 230px;
+  width: 220px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -316,15 +324,23 @@ body {
   color: #ff865d;
   margin-bottom: 30px;
 }
-.remainder_card .remainder_info .remain_info_star {
+.remainder_card .remainder_info .remain_info_bizhour {
   margin-bottom: 5px;
+  width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .remainder_card .remainder_info .remain_info_category {
   margin-bottom: 5px;
+  width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .remainder_card .remainder_info .remain_info_address {
-  width: 250px;
+  width: 220px;
   word-wrap: break-word;
   display: -webkit-box;
   -webkit-line-clamp: 2;
