@@ -28,3 +28,19 @@ function Action_Slide(index) {
     }
   };
 }
+$(document).ready(function () {
+  $(".m_btn").click(function () {
+    if ($(this).hasClass("m_btn_checked") === true) {
+      $(this).removeClass("m_btn_checked");
+      console.log(btn_count);
+    } else {
+      $(this).addClass("m_btn_checked");
+      console.log(btn_count);
+    }
+  });
+});
+// 추가 수정 예정
+for (let i = 1; i < 9; i++) {
+  if (btn_`${i}`) {
+  }
+}

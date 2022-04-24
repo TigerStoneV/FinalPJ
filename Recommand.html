@@ -35,6 +35,9 @@
     <!-- anyChart -->
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
+    <!-- chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
      <!-- TypeIt -->
     <script src="https://unpkg.com/typeit@8.4.0/dist/index.umd.js"></script>
     <!-- ScrollOut -->
@@ -47,7 +50,6 @@
     <header>
       <nav class="navbar">
         <div class="navbar__title">
-          <!-- <i class="fa-solid fa-map-location-dot"></i> -->
           <img src="./img/logo1.png" alt="not found">
           <span class="navbar__title_title">우만추</span>
         </div>
@@ -682,20 +684,20 @@
             <span class="cloud_word" id="midpoint"> 역삼역 </span> 핫 키워드
           </div>
           <div class="h_divider"></div>
+          <div class="fourth_title">
+            <span class="fourth_title_big">라스트 그래프</span>
+            <span class="fourth_title_small">중간지점의 키워드의 비율입니다.</span> 
+          </div>
           <div class="box_button">
             <div class="word_btn food_button">먹거리로 재추천</div>
             <div class="word_btn play_button">놀거리로 재추천</div>
-          </div>
+          </div>          
           <div class="word_cloud">
             <div class="cloud_food">
-              <div class="chart-area">
-                <div id="food_container"></div>
-              </div>
+              <canvas id="myChart_food" style="width:100%;max-width:700px"></canvas>              
             </div>
-            <div class="cloud_play">
-              <div class="chart-area">
-                <div id="play_container"></div>
-              </div>
+            <div class="cloud_play">              
+                <canvas id="myChart_play" style="width:100%;max-width:700px"></canvas>              
             </div>
           </div>
         </div>
@@ -708,7 +710,7 @@
           <span class="close">&times;</span>
           <div class="container">
             <img src="img/1.jpeg" alt="img not work" />
-            <div class="m_btn">1</div>
+            <div class="m_btn btn_1">1</div>
             <div class="m_btn btn_2">2</div>
             <div class="m_btn btn_3">3</div>
             <div class="m_btn btn_4">4</div>
@@ -762,7 +764,71 @@
     speed: 60,
     waitUntilVisible: true,
     })    
-    .go();    
+    .go();   
+    new TypeIt(".fourth_title", {
+    startDelay: 1000,
+    speed: 60,
+    waitUntilVisible: true,
+    })    
+    .go(); 
+    //food pie chart
+    var xValues_food = ["한식", "중식", "일식", "양식", "카페","술집"];
+    var yValues_food = [55, 49, 44, 24, 15,13];
+    var barColors = [
+    "#ff6565",
+    "#657fff",
+    "#ffa365",
+    "#f5ff65",
+    "#72ff65",
+    "#9b65ff"
+    ];
+
+new Chart("myChart_food", {
+  type: "doughnut",
+  data: {
+    labels: xValues_food,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues_food
+    }]
+  },
+  options: {
+    legend: {
+      position:'right',
+      
+    }
+  }
+}); 
+//play pie chart
+var xValues_play = ["노래방", "영화관", "카페/놀거리", "당구장", "pc방","스포츠/오락","오락실","찜질방","놀이공원"];
+    var yValues_play = [55, 49, 44, 24, 15,13,15,17,81];
+    var barColors = [
+    "#ff6565",
+    "#657fff",
+    "#ffa365",
+    "#f5ff65",
+    "#72ff65",
+    "#9b65ff",
+    "#4f47a7",
+    "#47a7a7",
+    "#f398ff",
+    ];
+
+new Chart("myChart_play", {
+  type: "doughnut",
+  data: {
+    labels: xValues_play,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues_play
+    }]
+  },
+  options: {
+    legend:{
+      position:'right'
+    }
+  }
+}); 
     </script>
   </body>
 </html>
