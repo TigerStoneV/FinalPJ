@@ -282,8 +282,8 @@ body {
 .star_category {
   display: inline;
 }
-.star_category .info_bizhour,
-.star_category .info_category,
+.star_category #info_bizhour,
+.star_category #info_category,
 #info_address {
   width: 200px;
   overflow: hidden;
@@ -459,7 +459,7 @@ body {
 .info-menu #shop-menu {
   font-weight: 300;
 }
-/* 제목만 볼드 추가. */
+
 .m_btn {
   position: absolute;
   bottom: 5px;

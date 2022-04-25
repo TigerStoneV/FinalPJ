@@ -1,3 +1,14 @@
+let m_btn = [
+  { class: "btn_1", checked: false },
+  { class: "btn_2", checked: false },
+  { class: "btn_3", checked: false },
+  { class: "btn_4", checked: false },
+  { class: "btn_5", checked: false },
+  { class: "btn_6", checked: false },
+  { class: "btn_7", checked: false },
+  { class: "btn_8", checked: false },
+];
+
 function Action_Slide(index) {
   var modal = document.getElementById("myModal");
 
@@ -30,17 +41,9 @@ function Action_Slide(index) {
 }
 $(document).ready(function () {
   $(".m_btn").click(function () {
-    if ($(this).hasClass("m_btn_checked") === true) {
-      $(this).removeClass("m_btn_checked");
-      console.log(btn_count);
-    } else {
-      $(this).addClass("m_btn_checked");
-      console.log(btn_count);
+    for (let i = 0; i < m_btn.length; i++) {
+      $(`.${m_btn[i]["class"]}`).removeClass("m_btn_checked");
     }
+    $(this).addClass("m_btn_checked");
   });
 });
-// 추가 수정 예정
-for (let i = 1; i < 9; i++) {
-  if (btn_`${i}`) {
-  }
-}
