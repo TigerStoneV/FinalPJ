@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,23 +16,22 @@
      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
      <!-- daum address -->
      <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+     <!-- TypeIt -->
+     <script src="https://unpkg.com/typeit@8.4.0/dist/index.umd.js"></script>
     <title>우만추</title>
 </head>
 <header>
     <nav class="navbar">
         <div class="navbar__title">
-            <i class="fas fa-user-secret"></i>            
+             <img src="./img/logo1.png" alt="not found">   
              <span class ="navbar__title_title">우만추</span>
-        </div>
-        <ul class="navbar__menu_1">            
-            <li><button class ="scroll_top">상단이동</button></li>
-        </ul>
+        </div>        
     </nav>
 </header>
 <body>
     <section id ="section1">
         <div class="address">
-            <div class="address_text">현재 대기중 인원은 <span id="countValue"></span>명 입니다. </div>
+            <div class="address_text"> 대기중 인원은 <span id="countValue"></span>명 입니다. </div>
             <div class="address_container">                
                 <div class="address_box sample_a">
                     <i class="fa-solid fa-user"></i>
@@ -85,16 +85,41 @@
                             
             <div class="address_plus"> + </div>
             <div class="address_set">
-                <div class="set__confirm">확인</div>
                 <div class="set__init">초기화</div>
+                <div class="confirm_not_select">확인</div>                
             </div>    
         </div>
-        <div class="background_img">
-            <div class="img_1">A</div>
-            <div class="img_2">B</div>
-            <div class="img_3">C</div>
-        </div>    
+        <div class="bg_img">
+            <img src="./img/background.png" alt="not found image">
+        </div>
+        <div class="right_sub1">             
+        </div>
+        <div class="right_sub2">            
+        </div>                  
+      
     </section>
-    
+     
+   <script>    
+    new TypeIt(".right_sub1", {
+    speed: 70,
+    })    
+    .type("친구들과 어디에서 만나서 고민이야?")
+    .move(-5, { delay: 100 })
+    .pause(500)
+    .type("뭐할지 ")
+    .move(5)
+    .type("<br> 그렇다면 이사이트 하나면 돼 ")
+    .pause(800)
+    .delete()
+    .type("만날 장소를 고를땐")
+    .go();
+
+    new TypeIt(".right_sub2", {
+    strings: ["#우만추"],
+    startDelay: 8000,
+    speed: 50,
+    }).go();
+
+   </script>
 </body>
 </html>
